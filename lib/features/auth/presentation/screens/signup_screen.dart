@@ -8,7 +8,6 @@ import 'package:kisan_app/core/constants/enums/app_enums.dart';
 import 'package:kisan_app/core/utils/app_overlays.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
-import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 
 import '../../../../core/utils/app_validations.dart';
 import '../../../../core/widgets/common/custom_app_bar.dart';
@@ -27,7 +26,7 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController(
-    text: kDebugMode ? 'HerStay Curator' : '',
+    text: kDebugMode ? 'Kheti-Kisaani User' : '',
   );
   final _emailController = TextEditingController(
     text: kDebugMode ? 'rajkumar.webwiders@gmail.com' : '',
@@ -40,7 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   );
 
   ValueNotifier<bool> hideAndShowPassword = ValueNotifier<bool>(true);
-  ValueNotifier<List<int>> selected = ValueNotifier<List<int>>([]);
+  // ValueNotifier<List<int>> selected = ValueNotifier<List<int>>([]);
 
   @override
   void dispose() {
@@ -55,9 +54,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onSignUp(List<String> dataList) {
     if (_formKey.currentState!.validate()) {
-      final selectedInspirations = selected.value
-          .map((index) => dataList[index])
-          .toList();
+      // final selectedInspirations = selected.value
+      //     .map((index) => dataList[index])
+      //     .toList();
 
       context.read<AuthBloc>().add(
         AuthSignUpRequested(
@@ -67,7 +66,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           phone: _phoneController.text.trim(),
           phoneCode: _phoneCode,
           countryCode: _countryCode,
-          inspirations: selectedInspirations,
+          // inspirations: selectedInspirations,
         ),
       );
     }
@@ -203,90 +202,90 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   },
                 ),
                 30.heightBox,
-                Text(
-                  context.l10n.whatInspiresYou,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.blackColor,
-                  ),
-                  textAlign: TextAlign.start,
-                ),
-                25.height,
-                ValueListenableBuilder<List<int>>(
-                  valueListenable: selected,
-                  builder: (context, selectedIndices, child) {
-                    return SizedBox(
-                      height: 40,
-                      child: ListView.separated(
-                        separatorBuilder: (context, index) =>
-                            SizedBox(width: 10),
-                        shrinkWrap: true,
-                        itemCount: dataList.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          final isSelected = selectedIndices.contains(index);
-                          return GestureDetector(
-                            onTap: () {
-                              if (selectedIndices.contains(index)) {
-                                selected.value = List.from(selected.value)
-                                  ..remove(index);
-                              } else {
-                                selected.value = List.from(selected.value)
-                                  ..add(index);
-                              }
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 10,
-                                vertical: 10,
-                              ),
-                              decoration: BoxDecoration(
-                                color: isSelected
-                                    ? AppColors.primary.withValues(alpha: 0.08)
-                                    : AppColors.fillColor.withValues(
-                                        alpha: 0.4,
-                                      ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                border: Border.all(
-                                  color: Colors.black.withValues(alpha: 0.06),
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Image.asset(
-                                    imagesList[index],
-                                    height: 16,
-                                    width: 16,
-                                    fit: BoxFit.contain,
-                                    color: isSelected
-                                        ? AppColors.primary
-                                        : AppColors.color2D2F2F,
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    dataList[index],
-                                    style: context.textTheme.bodyMedium
-                                        ?.copyWith(
-                                          color: isSelected
-                                              ? AppColors.primary
-                                              : context.colorScheme.onSurface
-                                                    .withValues(alpha: 0.5),
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    );
-                  },
-                ),
+                // Text(
+                //   context.l10n.whatInspiresYou,
+                //   style: TextStyle(
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.w600,
+                //     color: AppColors.blackColor,
+                //   ),
+                //   textAlign: TextAlign.start,
+                // ),
+                // 25.height,
+                // ValueListenableBuilder<List<int>>(
+                //   valueListenable: selected,
+                //   builder: (context, selectedIndices, child) {
+                //     return SizedBox(
+                //       height: 40,
+                //       child: ListView.separated(
+                //         separatorBuilder: (context, index) =>
+                //             SizedBox(width: 10),
+                //         shrinkWrap: true,
+                //         itemCount: dataList.length,
+                //         scrollDirection: Axis.horizontal,
+                //         itemBuilder: (context, index) {
+                //           final isSelected = selectedIndices.contains(index);
+                //           return GestureDetector(
+                //             onTap: () {
+                //               if (selectedIndices.contains(index)) {
+                //                 selected.value = List.from(selected.value)
+                //                   ..remove(index);
+                //               } else {
+                //                 selected.value = List.from(selected.value)
+                //                   ..add(index);
+                //               }
+                //             },
+                //             child: Container(
+                //               padding: EdgeInsets.symmetric(
+                //                 horizontal: 10,
+                //                 vertical: 10,
+                //               ),
+                //               decoration: BoxDecoration(
+                //                 color: isSelected
+                //                     ? AppColors.primary.withValues(alpha: 0.08)
+                //                     : AppColors.fillColor.withValues(
+                //                         alpha: 0.4,
+                //                       ),
+                //                 borderRadius: BorderRadius.all(
+                //                   Radius.circular(20),
+                //                 ),
+                //                 border: Border.all(
+                //                   color: Colors.black.withValues(alpha: 0.06),
+                //                 ),
+                //               ),
+                //               child: Row(
+                //                 mainAxisAlignment: MainAxisAlignment.center,
+                //                 mainAxisSize: MainAxisSize.min,
+                //                 children: [
+                //                   Image.asset(
+                //                     imagesList[index],
+                //                     height: 16,
+                //                     width: 16,
+                //                     fit: BoxFit.contain,
+                //                     color: isSelected
+                //                         ? AppColors.primary
+                //                         : AppColors.color2D2F2F,
+                //                   ),
+                //                   SizedBox(width: 8),
+                //                   Text(
+                //                     dataList[index],
+                //                     style: context.textTheme.bodyMedium
+                //                         ?.copyWith(
+                //                           color: isSelected
+                //                               ? AppColors.primary
+                //                               : context.colorScheme.onSurface
+                //                                     .withValues(alpha: 0.5),
+                //                         ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           );
+                //         },
+                //       ),
+                //     );
+                //   },
+                // ),
                 45.heightBox,
                 BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, state) {

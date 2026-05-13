@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'HerStay';
+  String get appTitle => 'Kheti-Kisaani';
 
   @override
   String get homePageTitle => 'Home Page';
@@ -24,11 +24,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signup => 'Sign Up';
 
   @override
-  String get signInToViewTrips => 'Sign in to view and manage your journeys';
+  String get signInToViewTrips => 'Sign in to manage your trades and listings';
 
   @override
   String get signInPrompt =>
-      'Connect with fellow travelers and start planning your next adventure.';
+      'Connect with fellow farmers and start your agricultural journey.';
 
   @override
   String get settings => 'Settings';
@@ -70,7 +70,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome Back';
 
   @override
-  String get signInSubtitle => 'Sign in to continue your travel journey';
+  String get signInSubtitle => 'Sign in to continue your trade journey';
 
   @override
   String get emailLabel => 'Email Address';
@@ -94,11 +94,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboarding1Tagline => 'WELCOME';
 
   @override
-  String get onboarding1Title => 'Welcome to HerStay';
+  String get onboarding1Title => 'Welcome to Kheti-Kisaani';
 
   @override
   String get onboarding1Desc =>
-      'A safer way for women to find and share accommodations.';
+      'A better way for farmers to buy and sell produce.';
 
   @override
   String get onboarding2Tagline => 'SAFETY FIRST';
@@ -138,13 +138,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboarding5Desc =>
-      'HerStay works because users look out for each other.';
+      'Kheti-Kisaani works because users look out for each other.';
 
   @override
   String get createAccount => 'Create your account';
 
   @override
-  String get startYourCurated => 'Start your curated travel experience.';
+  String get startYourCurated => 'Start your curated marketplace experience.';
 
   @override
   String get nameLabel => 'Full Name';
@@ -165,7 +165,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mobileNumber => 'Mobile number';
 
   @override
-  String get whatInspiresYou => 'What inspires you?';
+  String get whatInspiresYou => 'What are you looking for?';
 
   @override
   String get navHome => 'HOME';
@@ -174,13 +174,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navSearch => 'SEARCH';
 
   @override
-  String get navMyTrip => 'MY TRIPS';
+  String get navMyTrip => 'MY TRADES';
 
   @override
-  String get activeTrips => 'Active Trips';
+  String get activeTrips => 'Active Trades';
 
   @override
-  String get pastTrips => 'Past Trips';
+  String get pastTrips => 'Past Trades';
 
   @override
   String get navChat => 'CHAT';
@@ -286,10 +286,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categories => 'Categories';
 
   @override
-  String get searchPlaceholder => 'Search destinations...';
+  String get searchPlaceholder => 'Search crops, grains, tractors...';
 
   @override
-  String get exploreDestinations => 'Explore Destinations';
+  String get exploreDestinations => 'Explore Marketplace';
 
   @override
   String get noResultsFound => 'No matches found for your search';
@@ -316,17 +316,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get viewMyTrips => 'View My Trips';
 
   @override
-  String get yourJourneyToSafe => 'Your journey to safe, ';
+  String get yourJourneyToSafe => 'Your gateway to fair, ';
 
   @override
-  String get inspiredTravel => 'inspired travel ';
+  String get inspiredTravel => 'profitable farming ';
 
   @override
   String get startsHere => 'starts here.';
 
   @override
   String get pleaseEnterYourDetailsToContinueYourAdventure =>
-      'Please enter your details to continue your adventure.';
+      'Please enter your details to continue your agricultural journey.';
 
   @override
   String get or => 'OR';
@@ -336,7 +336,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get forgotPasswordSubtitle =>
-      'Don\'t worry, it happens to the best of us.Tell us your email and we\'ll send you a recovery link to get you back to your journey.';
+      'Don\'t worry, it happens. Tell us your email and we\'ll send you a recovery link to get you back to your trades.';
 
   @override
   String get resetPassword => 'Reset Password';
@@ -354,13 +354,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logIn => 'Login';
 
   @override
-  String get nature => 'Nature';
+  String get nature => 'Grains';
 
   @override
-  String get culture => 'Culture';
+  String get culture => 'Vegetables';
 
   @override
-  String get wellness => 'Wellness';
+  String get wellness => 'Tractors';
 
   @override
   String get verify => 'Verify';
@@ -369,8 +369,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weHaveSentDigitCodeTo => 'We\'ve sent a 6-digit code to';
 
   @override
-  String get toVerifyYourExplorerIdentity =>
-      'to verify your explorer identity.';
+  String get toVerifyYourExplorerIdentity => 'to verify your identity.';
 
   @override
   String get didNotReceiveCode => 'Didn\'t receive the code?';
@@ -404,7 +403,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exploringTheHiddenGrottos =>
-      'Exploring the hidden grottos and sun- drenched trails of Lagos. This trip is designed for those who find peace in the sound of the Atlantic and the warmth of Mediterranean hospitality. We\'ll be staying in a boutique guest house curated for women, focusing on slow mornings, coastal hikes, and authentic Portuguese dining.';
+      'Kheti-Kisaani is a platform dedicated to empowering farmers and traders by providing a direct marketplace for crops, grains, and agricultural equipment. Our mission is to ensure fair pricing and transparent transactions for the farming community.';
 
   @override
   String get contactDetailsArePrivate => 'CONTACT DETAILS ARE PRIVATE';
@@ -445,7 +444,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourTripBannerDesc =>
-      'You are viewing your own travel listing. All interactions from other members will appear in your inbox.';
+      'You are viewing your own product listing. All inquiries from buyers will appear in your inbox.';
 
   @override
   String get hostContactInfo => 'HOST CONTACT INFORMATION';
@@ -458,7 +457,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hostVerifiedDesc =>
-      'Host verified by HerStay community for safe travel.';
+      'Host verified by Kheti-Kisaani community for safe travel.';
 
   @override
   String get faqTitle => 'Frequently Asked Questions';
@@ -475,7 +474,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get faq2Answer =>
-      'That is to be decided amongst yourselves. Currently, HerStay does not receive or manage any money from its users. It is highly recommended that you draw up a written agreement before making any payments. As stated in the terms and conditions HerStay is not liable for any payments or agreements and is only intended to connect users with similar travel lodging preferences.';
+      'That is to be decided amongst yourselves. Currently, Kheti-Kisaani does not receive or manage any money from its users. It is highly recommended that you draw up a written agreement before making any payments. As stated in the terms and conditions Kheti-Kisaani is not liable for any payments or agreements and is only intended to connect users with similar travel lodging preferences.';
 
   @override
   String get faq3Question => 'Can I bring my pet?';
@@ -486,11 +485,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get faq4Question =>
-      'Will HerStay reimburse me if my match cancels or is a no-show?';
+      'Will Kheti-Kisaani reimburse me if my match cancels or is a no-show?';
 
   @override
   String get faq4Answer =>
-      'No. HerStay is not liable for any agreements made in or out of the app. We recommended using written agreements. You may use the app to connect with other users who may be interested in replacing your match/es.';
+      'No. Kheti-Kisaani is not liable for any agreements made in or out of the app. We recommended using written agreements. You may use the app to connect with other users who may be interested in replacing your match/es.';
 
   @override
   String get faq5Question =>

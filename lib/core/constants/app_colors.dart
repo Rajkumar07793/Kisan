@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // --- Pink & White Brand Palette ---
-  static const Color primary = Color(0xFFB70049); // Deep Pink (Brand Primary)
-  static const Color primaryLight = Color(
-    0xFFFF7290,
-  ); // Light Pink (Brand Secondary)
-  static const Color primaryDark = Color(0xFF8E0038);
-  static const Color colorF36371 = Color(0xffF36371);
-
-  static const Color secondary = Color(
-    0xFF2196F3,
-  ); // Blue for secondary actions
+  // --- Agricultural Brand Palette ---
+  static const Color primary = Color(0xFF2E7D32); // Agricultural Green
+  static const Color primaryLight = Color(0xFF60AD5E); // Lighter Green
+  static const Color primaryDark = Color(0xFF005005); // Darker Green
+  
+  static const Color secondary = Color(0xFF795548); // Earthy Brown
+  static const Color secondaryLight = Color(0xFFA98274);
+  static const Color secondaryDark = Color(0xFF4B2C20);
 
   // Backgrounds
   static const Color backgroundLight = Color(0xFFF6F6F6);
@@ -52,9 +49,9 @@ class AppColors {
   static const Color color2D2F2F = Color(0xFF2D2F2F);
   static const Color color5A5C5C = Color(0xFF5A5C5C);
   static const Color fillColor = Color(0xFFF0F1F1);
-  static const Color pinkColor = Color(0xFFFFC0D8);
-  static const Color greenColor = Color(0xFF00610F);
-  static const Color color351685 = Color(0xFF351685);
+  static const Color pinkColor = Color(0xFFC8E6C9); // Light Green instead of Pink
+  static const Color greenColor = Color(0xFF2E7D32);
+  static const Color color351685 = Color(0xFF795548); // Brown instead of Purple
   static const Color color5A5C5C99 = Color(0xff5a5c5c99);
   static const Color colorF0F1F1 = Color(0xFFF0F1F1);
   static const Color color111827 = Color(0xFF111827);

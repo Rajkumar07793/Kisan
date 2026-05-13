@@ -2,7 +2,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kisan_app/core/constants/app_assets.dart';
 
 class EnvConfig {
-  static String get appName => dotenv.get('APP_NAME', fallback: 'HerStay');
+  static String get appName => dotenv.get('APP_NAME', fallback: 'Kheti-Kisaani');
   static String get apiUrl => dotenv.get('API_URL', fallback: '');
   static String get firebaseProjectId =>
       dotenv.get('FIREBASE_PROJECT_ID', fallback: '');

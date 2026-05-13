@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kisan_app/core/constants/env_config.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -50,9 +51,9 @@ class _SplashScreenState extends State<SplashScreen>
             children: [
               Image.asset('assets/images/logo.png', width: 200, height: 200),
               const SizedBox(height: 20),
-              const Text(
-                'Kheti-Kisaani',
-                style: TextStyle(
+              Text(
+                EnvConfig.appName,
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF2E7D32), // Agricultural Green

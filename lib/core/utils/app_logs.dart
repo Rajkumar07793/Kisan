@@ -1,9 +1,10 @@
 import 'dart:developer' as developer;
 
 import 'package:flutter/foundation.dart';
+import 'package:kisan_app/core/constants/env_config.dart';
 
 class AppLogs {
-  static const String _tag = 'HerStay';
+  static final String _tag = EnvConfig.appName;
 
   /// Log a message with an optional name/tag
   static void log(String message, {String? name, Object? error}) {

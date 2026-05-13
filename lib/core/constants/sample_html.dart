@@ -3,7 +3,7 @@ class SampleHtml {
     <p><b>Effective Date: May 1, 2026</b></p>
 
     <h2>1. Introduction</h2>
-    <p>HerStay (“we,” “us,” or “our”) respects your privacy. This Privacy Policy explains how we collect, use, and share your information when you use our mobile application (“App”).</p>
+    <p>Kheti-Kisaani (“we,” “us,” or “our”) respects your privacy. This Privacy Policy explains how we collect, use, and share your information when you use our mobile application (“App”).</p>
 
     <h2>2. Information We Collect</h2>
     <h3>2.1 Information You Provide</h3>
@@ -68,7 +68,7 @@ class SampleHtml {
     <p>Payments and some services may be handled by third parties (e.g., Apple). Their privacy policies apply.</p>
 
     <h2>10. Children’s Privacy</h2>
-    <p>HerStay is not intended for users under 18. We do not knowingly collect data from minors.</p>
+    <p>Kheti-Kisaani is not intended for users under 18. We do not knowingly collect data from minors.</p>
 
     <h2>11. Changes to This Policy</h2>
     <p>We may update this Privacy Policy. Continued use means acceptance.</p>
@@ -80,11 +80,11 @@ class SampleHtml {
   static const String termsOfService = '''
     <p><b>Effective Date: May 1, 2026</b></p>
     <p><b>Last Updated: May 1, 2026</b></p>
-    <p>Welcome to HerStay (“App,” “we,” “us,” or “our”), a platform designed to connect women seeking to share accommodations in a safer, community-driven environment.</p>
-    <p>By accessing or using HerStay, you agree to these Terms and Conditions (“Terms”). If you do not agree, you must not use the App.</p>
+    <p>Welcome to Kheti-Kisaani (“App,” “we,” “us,” or “our”), a platform designed to connect farmers and buyers for trading agricultural products in a safer, community-driven environment.</p>
+    <p>By accessing or using Kheti-Kisaani, you agree to these Terms and Conditions (“Terms”). If you do not agree, you must not use the App.</p>
 
     <h2>1. Eligibility</h2>
-    <p>HerStay is intended for individuals who identify as women and are at least 18 years old. By using the App, you represent and warrant that:</p>
+    <p>Kheti-Kisaani is intended for individuals who are at least 18 years old. By using the App, you represent and warrant that:</p>
     <ul>
       <li>You are at least 18 years old</li>
       <li>You have the legal capacity to enter into a binding agreement</li>
@@ -93,7 +93,7 @@ class SampleHtml {
     <p>We reserve the right to suspend or remove users who misrepresent their identity or eligibility.</p>
 
     <h2>2. Purpose of the App</h2>
-    <p>HerStay provides a platform to connect users interested in sharing accommodations (e.g., travel stays, sublets, or roommate arrangements). We do not:</p>
+    <p>Kheti-Kisaani provides a platform to connect users interested in sharing accommodations (e.g., travel stays, sublets, or roommate arrangements). We do not:</p>
     <ul>
       <li>Own, lease, or manage any properties</li>
       <li>Act as a broker, agent, or insurer</li>
@@ -111,7 +111,7 @@ class SampleHtml {
     <p>We may suspend or terminate accounts that violate these Terms or compromise community safety.</p>
 
     <h2>4. Safety & Community Standards</h2>
-    <p>HerStay is built with safety in mind, but we cannot guarantee user behavior. You agree to:</p>
+    <p>Kheti-Kisaani is built with safety in mind, but we cannot guarantee user behavior. You agree to:</p>
     <ul>
       <li>Treat other users respectfully</li>
       <li>Not engage in harassment, discrimination, or harmful conduct</li>
@@ -134,7 +134,7 @@ class SampleHtml {
     <p>All communication and interactions are at your own risk.</p>
 
     <h2>6. Accommodation Agreements</h2>
-    <p>Any agreement to share accommodations is solely between users. HerStay is not responsible for:</p>
+    <p>Any agreement to share accommodations is solely between users. Kheti-Kisaani is not responsible for:</p>
     <ul>
       <li>Property quality, safety, or legality</li>
       <li>Payment disputes between users</li>
@@ -145,7 +145,7 @@ class SampleHtml {
 
     <h2>7. Payments & Subscriptions</h2>
     <h3>7.1 In-App Purchases</h3>
-    <p>HerStay may offer premium features through in-app purchases. Payments are processed through Apple’s App Store and are subject to Apple’s terms.</p>
+    <p>Kheti-Kisaani may offer premium features through in-app purchases. Payments are processed through Apple’s App Store and are subject to Apple’s terms.</p>
     <h3>7.2 Subscriptions</h3>
     <p>If you purchase a subscription:</p>
     <ul>
@@ -156,7 +156,7 @@ class SampleHtml {
     <p>All purchases are non-refundable except as required by law or Apple policies.</p>
 
     <h2>8. User Content</h2>
-    <p>You retain ownership of content you upload (e.g., profile photos, bios), but you grant HerStay a worldwide, non-exclusive, royalty-free license to use, display, and distribute it in connection with the App. You agree not to post content that:</p>
+    <p>You retain ownership of content you upload (e.g., profile photos, bios), but you grant Kheti-Kisaani a worldwide, non-exclusive, royalty-free license to use, display, and distribute it in connection with the App. You agree not to post content that:</p>
     <ul>
       <li>Is false, misleading, or fraudulent</li>
       <li>Is abusive, offensive, or discriminatory</li>
@@ -165,7 +165,7 @@ class SampleHtml {
     <p>We may remove content at our discretion.</p>
 
     <h2>9. Privacy</h2>
-    <p>Your use of HerStay is also governed by our Privacy Policy, which explains how we collect, use, and protect your data.</p>
+    <p>Your use of Kheti-Kisaani is also governed by our Privacy Policy, which explains how we collect, use, and protect your data.</p>
 
     <h2>10. Prohibited Activities</h2>
     <p>You agree not to:</p>
@@ -186,7 +186,7 @@ class SampleHtml {
     <p>You may stop using the App at any time.</p>
 
     <h2>12. Disclaimers</h2>
-    <p>HerStay is provided “as is” and “as available.” We make no guarantees regarding:</p>
+    <p>Kheti-Kisaani is provided “as is” and “as available.” We make no guarantees regarding:</p>
     <ul>
       <li>Safety of interactions</li>
       <li>Availability or reliability of the App</li>
@@ -194,10 +194,10 @@ class SampleHtml {
     </ul>
 
     <h2>13. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, HerStay shall not be liable for: Indirect or incidental damages; Losses resulting from user interactions; Disputes between users.</p>
+    <p>To the fullest extent permitted by law, Kheti-Kisaani shall not be liable for: Indirect or incidental damages; Losses resulting from user interactions; Disputes between users.</p>
 
     <h2>14. Indemnification</h2>
-    <p>You agree to indemnify and hold harmless HerStay and its affiliates from any claims arising from:</p>
+    <p>You agree to indemnify and hold harmless Kheti-Kisaani and its affiliates from any claims arising from:</p>
     <ul>
       <li>Your use of the App</li>
       <li>Your interactions with other users</li>
@@ -217,7 +217,7 @@ class SampleHtml {
     <p>For questions or concerns: Email: admin@herstayapp.com</p>
 
     <h2>19. Safety Reminder</h2>
-    <p>HerStay encourages users to:</p>
+    <p>Kheti-Kisaani encourages users to:</p>
     <ul>
       <li>Meet in public places before committing to shared accommodations</li>
       <li>Verify identities independently</li>
@@ -226,8 +226,8 @@ class SampleHtml {
   ''';
 
   static const String communityGuidelines = '''
-    <p>Welcome to HerStay 💗</p>
-    <p>HerStay is built to help women find safe, respectful accommodation matches. These guidelines keep the community trustworthy.</p>
+    <p>Welcome to Kheti-Kisaani 🌾</p>
+    <p>Kheti-Kisaani is built to help farmers find fair, respectful trading matches. These guidelines keep the community trustworthy.</p>
     <h2>Be Respectful</h2>
     <ul>
       <li>Treat everyone with kindness</li>

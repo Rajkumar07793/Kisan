@@ -37,12 +37,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final authState = context.watch<AuthBloc>().state;
-    // final isAuthenticated = authState.status == AuthStatus.authenticated;
-    // final displayImageUrl = authState.user?.profileImage;
-
     return AppBar(
-      backgroundColor: backgroundColor ?? AppColors.backgroundLight,
+      backgroundColor: backgroundColor ?? context.colorScheme.surface,
       elevation: 0,
       scrolledUnderElevation: 0,
       centerTitle: centerTitle,
@@ -53,37 +49,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           titleWidget ??
           Row(
             children: [
-              // if (showCircleAvtar == true &&
-              //     !avatarOnRight &&
-              //     isAuthenticated) ...[
-              //   GestureDetector(
-              //     onTap: onAvatarTap,
-              //     child: CustomAvatar(imageUrl: displayImageUrl, radius: 26),
-              //   ),
-              //   8.width,
-              // ],
               Text(
                 title ?? EnvConfig.appName,
                 style: context.textTheme.titleLarge?.copyWith(
-                  color: const Color.fromARGB(255, 13, 10, 11),
+                  color: context.colorScheme.onSurface,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
-      actions: [
-        if (actions != null) ...actions!,
-        // if (showCircleAvtar == true && avatarOnRight && isAuthenticated) ...[
-        //   Padding(
-        //     padding: const EdgeInsets.only(right: 16.0),
-        //     child: GestureDetector(
-        //       onTap: onAvatarTap,
-        //       child: CustomAvatar(imageUrl: displayImageUrl, radius: 18),
-        //     ),
-        //   ),
-        // ],
-      ],
+      actions: actions,
     );
   }
 
@@ -92,17 +68,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     if (showMenuButton) {
       return IconButton(
-        icon: const Icon(Icons.menu, color: AppColors.primary),
+        icon: Icon(Icons.menu, color: context.colorScheme.primary),
         onPressed: () => Scaffold.of(context).openDrawer(),
       );
     }
 
     if (showBackButton && Navigator.of(context).canPop()) {
       return IconButton(
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back_ios_new,
           size: 20,
-          color: AppColors.primary,
+          color: context.colorScheme.primary,
         ),
         onPressed: () => Navigator.of(context).pop(),
       );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kisan_app/core/constants/app_colors.dart';
 
 import '../../utils/extensions/context_extensions.dart';
 
@@ -53,8 +52,7 @@ class CustomTextField extends StatelessWidget {
               context.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
                 fontSize: 14,
-                // color: AppColors.color5A5C5C,
-                color: AppColors.primary,
+                color: context.colorScheme.primary,
               ),
         ),
         const SizedBox(height: 10),
@@ -84,7 +82,7 @@ class CustomTextField extends StatelessWidget {
             style: context.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w400,
               fontSize: 12,
-              color: AppColors.blackColor,
+              color: context.colorScheme.onSurface,
             ),
             decoration: InputDecoration(
               hintText: hint,
@@ -93,10 +91,10 @@ class CustomTextField extends StatelessWidget {
               hintStyle: context.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
-                color: AppColors.color5A5C5C.withValues(alpha: 0.6),
+                color: context.colorScheme.onSurface.withValues(alpha: 0.6),
               ),
               filled: true,
-              fillColor: AppColors.fillColor.withValues(alpha: 0.6),
+              fillColor: context.colorScheme.surface,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(maxLines == 1 ? 35 : 16),
                 borderSide: BorderSide.none,
@@ -107,7 +105,10 @@ class CustomTextField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(maxLines == 1 ? 35 : 16),
-                borderSide: BorderSide.none,
+                borderSide: BorderSide(
+                  color: context.colorScheme.primary,
+                  width: 1.5,
+                ),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(maxLines == 1 ? 35 : 16),

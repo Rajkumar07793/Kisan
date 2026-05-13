@@ -8,6 +8,7 @@ import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/constants/enums/app_enums.dart';
 import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 
+import '../../../../core/constants/env_config.dart';
 import '../../../../core/utils/app_overlays.dart';
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/extensions/context_extensions.dart';
@@ -109,7 +110,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
               Center(
                 child: Text(
                   textAlign: TextAlign.center,
-                  context.l10n.appTitle,
+                  EnvConfig.appName,
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 35,
@@ -294,7 +295,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
             ),
             12.heightBox,
             Text(
-              'Your explorer identity has been verified successfully. Your journey with kisan_app starts now.',
+              'Your explorer identity has been verified successfully. Your journey with ${EnvConfig.appName} starts now.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.grey[600],

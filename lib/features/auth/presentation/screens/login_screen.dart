@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/constants/enums/app_enums.dart';
+import 'package:kisan_app/core/constants/env_config.dart';
 import 'package:kisan_app/core/utils/app_overlays.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 
@@ -101,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text(
                     textAlign: TextAlign.center,
-                    context.l10n.appTitle,
+                    EnvConfig.appName,
                     style: TextStyle(
                       color: AppColors.primary,
                       fontWeight: FontWeight.bold,
@@ -171,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         25.heightBox,
                         CustomTextField(
                           label: context.l10n.emailLabel,
-                          hint: 'explorer@herstay.com',
+                          hint: 'user@kheti-kisaani.com',
                           controller: _emailController,
                           prefixIcon: Icon(
                             Icons.email_outlined,

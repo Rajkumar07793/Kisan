@@ -22,7 +22,7 @@ class AuthSignUpRequested extends AuthEvent {
   final String phone;
   final String phoneCode;
   final String countryCode;
-  final List<String> inspirations;
+  // final List<String> inspirations;
   const AuthSignUpRequested({
     required this.email,
     required this.password,
@@ -30,7 +30,7 @@ class AuthSignUpRequested extends AuthEvent {
     required this.phone,
     required this.phoneCode,
     required this.countryCode,
-    required this.inspirations,
+    // required this.inspirations,
   });
 }
 

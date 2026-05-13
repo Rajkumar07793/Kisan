@@ -35,7 +35,7 @@ class CustomPhoneField extends StatelessWidget {
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w600,
             fontSize: 14,
-            color: AppColors.primary,
+            color: context.colorScheme.primary,
           ),
         ),
         const SizedBox(height: 10),
@@ -66,29 +66,29 @@ class CustomPhoneField extends StatelessWidget {
             dropdownTextStyle: context.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w400,
               fontSize: 12,
-              color: AppColors.blackColor,
+              color: context.colorScheme.onSurface,
             ),
             style: context.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w400,
               fontSize: 12,
-              color: AppColors.blackColor,
+              color: context.colorScheme.onSurface,
             ),
             flagsButtonPadding: const EdgeInsets.only(left: 16),
             showDropdownIcon: true,
-            dropdownIcon: const Icon(
+            dropdownIcon: Icon(
               Icons.keyboard_arrow_down_rounded,
               size: 20,
-              color: AppColors.color5A5C5C,
+              color: context.colorScheme.onSurface.withValues(alpha: 0.6),
             ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: context.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
-                color: AppColors.color5A5C5C.withOpacity(0.6),
+                color: context.colorScheme.onSurface.withValues(alpha: 0.6),
               ),
               filled: true,
-              fillColor: AppColors.fillColor.withOpacity(0.6),
+              fillColor: context.colorScheme.surface,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(35),
                 borderSide: BorderSide.none,
@@ -99,7 +99,7 @@ class CustomPhoneField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(35),
-                borderSide: BorderSide.none,
+                borderSide: BorderSide(color: context.colorScheme.primary, width: 1.5),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(35),

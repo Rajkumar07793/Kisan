@@ -122,7 +122,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       phone: event.phone,
       phoneCode: event.phoneCode,
       countryCode: event.countryCode,
-      inspirations: event.inspirations,
+      // inspirations: event.inspirations,
     );
     result.fold(
       (failure) => emit(

@@ -9,7 +9,7 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get appTitle => 'हरस्टे';
+  String get appTitle => 'खेती-किसानी';
 
   @override
   String get homePageTitle => 'होम पेज';
@@ -25,11 +25,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get signInToViewTrips =>
-      'अपनी यात्राओं को देखने और प्रबंधित करने के लिए साइन इन करें';
+      'अपने सौदों और उत्पादों को प्रबंधित करने के लिए साइन इन करें';
 
   @override
   String get signInPrompt =>
-      'अन्य यात्रियों के साथ जुड़ें और अपना अगला साहसिक कार्य शुरू करें।';
+      'साथी किसानों से जुड़ें और अपनी कृषि यात्रा शुरू करें।';
 
   @override
   String get settings => 'सेटिंग्स';
@@ -47,13 +47,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get searchHint => 'खोजें';
 
   @override
-  String get featuredTrips => 'विशेष रुप से प्रदर्शित यात्राएं';
+  String get featuredTrips => 'विशेष उत्पाद';
 
   @override
-  String get ongoingTrips => 'चल रही यात्राएं';
+  String get ongoingTrips => 'जारी सौदे';
 
   @override
-  String get upcomingTrips => 'आगामी यात्राएं';
+  String get upcomingTrips => 'आने वाले सौदे';
 
   @override
   String get viewAll => 'सभी देखें';
@@ -71,7 +71,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get welcomeBack => 'वापस स्वागत है';
 
   @override
-  String get signInSubtitle => 'अपनी यात्रा जारी रखने के लिए साइन इन करें';
+  String get signInSubtitle => 'अपना व्यापार जारी रखने के लिए साइन इन करें';
 
   @override
   String get emailLabel => 'ईमेल';
@@ -95,11 +95,11 @@ class AppLocalizationsHi extends AppLocalizations {
   String get onboarding1Tagline => 'WELCOME';
 
   @override
-  String get onboarding1Title => 'Welcome to HerStay';
+  String get onboarding1Title => 'खेती-किसानी में आपका स्वागत है';
 
   @override
   String get onboarding1Desc =>
-      'A safer way for women to find and share accommodations.';
+      'किसानों के लिए उपज बेचने और खरीदने का एक बेहतर तरीका।';
 
   @override
   String get onboarding2Tagline => 'SAFETY FIRST';
@@ -139,7 +139,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get onboarding5Desc =>
-      'HerStay works because users look out for each other.';
+      'Kheti-Kisaani works because users look out for each other.';
 
   @override
   String get createAccount => 'खाता बनाएं';
@@ -175,13 +175,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get navSearch => 'खोजें';
 
   @override
-  String get navMyTrip => 'मेरी यात्राएं';
+  String get navMyTrip => 'मेरे सौदे';
 
   @override
-  String get activeTrips => 'सक्रिय यात्राएं';
+  String get activeTrips => 'सक्रिय सौदे';
 
   @override
-  String get pastTrips => 'पिछली यात्राएं';
+  String get pastTrips => 'पिछले सौदे';
 
   @override
   String get navChat => 'चैट';
@@ -212,7 +212,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get personalInfo => 'व्यक्तिगत जानकारी';
 
   @override
-  String get myTripsTitle => 'मेरी यात्राएं';
+  String get myTripsTitle => 'मेरे सौदे';
 
   @override
   String get security => 'सुरक्षा';
@@ -269,7 +269,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get past => 'पिछली';
 
   @override
-  String get noTripsFound => 'कोई यात्रा नहीं मिली';
+  String get noTripsFound => 'कोई सौदा नहीं मिला';
 
   @override
   String get appSettings => 'ऐप सेटिंग्स';
@@ -287,10 +287,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get categories => 'श्रेणियाँ';
 
   @override
-  String get searchPlaceholder => 'गंतव्य खोजें...';
+  String get searchPlaceholder => 'फसल, अनाज, ट्रैक्टर खोजें...';
 
   @override
-  String get exploreDestinations => 'गंतव्यों का पता लगाएं';
+  String get exploreDestinations => 'बाजार का पता लगाएं';
 
   @override
   String get noResultsFound => 'आपकी खोज के लिए कोई मेल नहीं मिला';
@@ -314,13 +314,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get bookingSuccessful => 'बुकिंग सफल रही!';
 
   @override
-  String get viewMyTrips => 'मेरी यात्राएं देखें';
+  String get viewMyTrips => 'मेरे सौदे देखें';
 
   @override
-  String get yourJourneyToSafe => 'आपकी सुरक्षित यात्रा, ';
+  String get yourJourneyToSafe => 'आपका समृद्ध व्यापार, ';
 
   @override
-  String get inspiredTravel => 'प्रेरित यात्रा ';
+  String get inspiredTravel => 'लाभकारी खेती ';
 
   @override
   String get startsHere => 'यहाँ से शुरू होती है।';
@@ -355,13 +355,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get logIn => 'लॉगिन';
 
   @override
-  String get nature => 'प्रकृति';
+  String get nature => 'अनाज';
 
   @override
-  String get culture => 'संस्कृति';
+  String get culture => 'सब्जियां';
 
   @override
-  String get wellness => 'कल्याण';
+  String get wellness => 'ट्रैक्टर';
 
   @override
   String get verify => 'सत्यापित करें';
@@ -370,8 +370,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get weHaveSentDigitCodeTo => 'हमने 6-अंकीय कोड भेजा है';
 
   @override
-  String get toVerifyYourExplorerIdentity =>
-      'आपकी एक्सप्लोरर पहचान सत्यापित करने के लिए।';
+  String get toVerifyYourExplorerIdentity => 'आपकी पहचान सत्यापित करने के लिए।';
 
   @override
   String get didNotReceiveCode => 'कोड प्राप्त नहीं हुआ?';
@@ -392,20 +391,20 @@ class AppLocalizationsHi extends AppLocalizations {
   String get septDate => 'Sept 15 - Sep 20, 2024';
 
   @override
-  String get theJourney => 'The Journey';
+  String get theJourney => 'सौदा';
 
   @override
-  String get location => 'Location';
+  String get location => 'स्थान';
 
   @override
-  String get host => 'Host';
+  String get host => 'होस्ट';
 
   @override
-  String get theExperience => 'The Experience';
+  String get theExperience => 'अनुभव';
 
   @override
   String get exploringTheHiddenGrottos =>
-      'Exploring the hidden grottos and sun- drenched trails of Lagos. This trip is designed for those who find peace in the sound of the Atlantic and the warmth of Mediterranean hospitality. We\'ll be staying in a boutique guest house curated for women, focusing on slow mornings, coastal hikes, and authentic Portuguese dining.';
+      'खेती-किसानी एक ऐसा मंच है जो किसानों और व्यापारियों को फसलों, अनाज और कृषि उपकरणों के लिए एक सीधा बाजार प्रदान करके सशक्त बनाने के लिए समर्पित है। हमारा मिशन कृषि समुदाय के लिए उचित मूल्य और पारदर्शी लेनदेन सुनिश्चित करना है।';
 
   @override
   String get contactDetailsArePrivate => 'सम्पर्क विवरण निजी हैं';
@@ -414,7 +413,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get loginToMessage => 'संदेश भेजने के लिए लॉगिन करें';
 
   @override
-  String get viewAllTrip => 'सभी यात्राएं देखें';
+  String get viewAllTrip => 'सभी सौदे देखें';
 
   @override
   String get elenaR => 'एलेना आर.';
@@ -446,7 +445,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get yourTripBannerDesc =>
-      'आप अपनी स्वयं की यात्रा सूची देख रहे हैं। अन्य सदस्यों के सभी संवाद आपके इनबॉक्स में दिखाई देंगे।';
+      'आप अपनी स्वयं की उत्पाद सूची देख रहे हैं। खरीदारों के सभी प्रश्न आपके इनबॉक्स में दिखाई देंगे।';
 
   @override
   String get hostContactInfo => 'होस्ट संपर्क जानकारी';
@@ -459,7 +458,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hostVerifiedDesc =>
-      'सुरक्षित यात्रा के लिए हरस्टे समुदाय द्वारा सत्यापित होस्ट।';
+      'सुरक्षित व्यापार के लिए खेती-किसानी समुदाय द्वारा सत्यापित।';
 
   @override
   String get faqTitle => 'अक्सर पूछे जाने वाले प्रश्न';

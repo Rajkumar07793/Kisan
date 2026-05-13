@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// The title of the application
   ///
   /// In en, this message translates to:
-  /// **'HerStay'**
+  /// **'Kheti-Kisaani'**
   String get appTitle;
 
   /// Title for the home page
@@ -131,13 +131,13 @@ abstract class AppLocalizations {
   /// No description provided for @signInToViewTrips.
   ///
   /// In en, this message translates to:
-  /// **'Sign in to view and manage your journeys'**
+  /// **'Sign in to manage your trades and listings'**
   String get signInToViewTrips;
 
   /// No description provided for @signInPrompt.
   ///
   /// In en, this message translates to:
-  /// **'Connect with fellow travelers and start planning your next adventure.'**
+  /// **'Connect with fellow farmers and start your agricultural journey.'**
   String get signInPrompt;
 
   /// No description provided for @settings.
@@ -221,7 +221,7 @@ abstract class AppLocalizations {
   /// No description provided for @signInSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Sign in to continue your travel journey'**
+  /// **'Sign in to continue your trade journey'**
   String get signInSubtitle;
 
   /// No description provided for @emailLabel.
@@ -269,13 +269,13 @@ abstract class AppLocalizations {
   /// No description provided for @onboarding1Title.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to HerStay'**
+  /// **'Welcome to Kheti-Kisaani'**
   String get onboarding1Title;
 
   /// No description provided for @onboarding1Desc.
   ///
   /// In en, this message translates to:
-  /// **'A safer way for women to find and share accommodations.'**
+  /// **'A better way for farmers to buy and sell produce.'**
   String get onboarding1Desc;
 
   /// No description provided for @onboarding2Tagline.
@@ -347,7 +347,7 @@ abstract class AppLocalizations {
   /// No description provided for @onboarding5Desc.
   ///
   /// In en, this message translates to:
-  /// **'HerStay works because users look out for each other.'**
+  /// **'Kheti-Kisaani works because users look out for each other.'**
   String get onboarding5Desc;
 
   /// No description provided for @createAccount.
@@ -359,7 +359,7 @@ abstract class AppLocalizations {
   /// No description provided for @startYourCurated.
   ///
   /// In en, this message translates to:
-  /// **'Start your curated travel experience.'**
+  /// **'Start your curated marketplace experience.'**
   String get startYourCurated;
 
   /// No description provided for @nameLabel.
@@ -401,7 +401,7 @@ abstract class AppLocalizations {
   /// No description provided for @whatInspiresYou.
   ///
   /// In en, this message translates to:
-  /// **'What inspires you?'**
+  /// **'What are you looking for?'**
   String get whatInspiresYou;
 
   /// No description provided for @navHome.
@@ -419,19 +419,19 @@ abstract class AppLocalizations {
   /// No description provided for @navMyTrip.
   ///
   /// In en, this message translates to:
-  /// **'MY TRIPS'**
+  /// **'MY TRADES'**
   String get navMyTrip;
 
   /// No description provided for @activeTrips.
   ///
   /// In en, this message translates to:
-  /// **'Active Trips'**
+  /// **'Active Trades'**
   String get activeTrips;
 
   /// No description provided for @pastTrips.
   ///
   /// In en, this message translates to:
-  /// **'Past Trips'**
+  /// **'Past Trades'**
   String get pastTrips;
 
   /// No description provided for @navChat.
@@ -641,13 +641,13 @@ abstract class AppLocalizations {
   /// No description provided for @searchPlaceholder.
   ///
   /// In en, this message translates to:
-  /// **'Search destinations...'**
+  /// **'Search crops, grains, tractors...'**
   String get searchPlaceholder;
 
   /// No description provided for @exploreDestinations.
   ///
   /// In en, this message translates to:
-  /// **'Explore Destinations'**
+  /// **'Explore Marketplace'**
   String get exploreDestinations;
 
   /// No description provided for @noResultsFound.
@@ -701,13 +701,13 @@ abstract class AppLocalizations {
   /// No description provided for @yourJourneyToSafe.
   ///
   /// In en, this message translates to:
-  /// **'Your journey to safe, '**
+  /// **'Your gateway to fair, '**
   String get yourJourneyToSafe;
 
   /// No description provided for @inspiredTravel.
   ///
   /// In en, this message translates to:
-  /// **'inspired travel '**
+  /// **'profitable farming '**
   String get inspiredTravel;
 
   /// No description provided for @startsHere.
@@ -719,7 +719,7 @@ abstract class AppLocalizations {
   /// No description provided for @pleaseEnterYourDetailsToContinueYourAdventure.
   ///
   /// In en, this message translates to:
-  /// **'Please enter your details to continue your adventure.'**
+  /// **'Please enter your details to continue your agricultural journey.'**
   String get pleaseEnterYourDetailsToContinueYourAdventure;
 
   /// No description provided for @or.
@@ -737,7 +737,7 @@ abstract class AppLocalizations {
   /// No description provided for @forgotPasswordSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Don\'t worry, it happens to the best of us.Tell us your email and we\'ll send you a recovery link to get you back to your journey.'**
+  /// **'Don\'t worry, it happens. Tell us your email and we\'ll send you a recovery link to get you back to your trades.'**
   String get forgotPasswordSubtitle;
 
   /// No description provided for @resetPassword.
@@ -773,19 +773,19 @@ abstract class AppLocalizations {
   /// No description provided for @nature.
   ///
   /// In en, this message translates to:
-  /// **'Nature'**
+  /// **'Grains'**
   String get nature;
 
   /// No description provided for @culture.
   ///
   /// In en, this message translates to:
-  /// **'Culture'**
+  /// **'Vegetables'**
   String get culture;
 
   /// No description provided for @wellness.
   ///
   /// In en, this message translates to:
-  /// **'Wellness'**
+  /// **'Tractors'**
   String get wellness;
 
   /// No description provided for @verify.
@@ -803,7 +803,7 @@ abstract class AppLocalizations {
   /// No description provided for @toVerifyYourExplorerIdentity.
   ///
   /// In en, this message translates to:
-  /// **'to verify your explorer identity.'**
+  /// **'to verify your identity.'**
   String get toVerifyYourExplorerIdentity;
 
   /// No description provided for @didNotReceiveCode.
@@ -869,7 +869,7 @@ abstract class AppLocalizations {
   /// No description provided for @exploringTheHiddenGrottos.
   ///
   /// In en, this message translates to:
-  /// **'Exploring the hidden grottos and sun- drenched trails of Lagos. This trip is designed for those who find peace in the sound of the Atlantic and the warmth of Mediterranean hospitality. We\'ll be staying in a boutique guest house curated for women, focusing on slow mornings, coastal hikes, and authentic Portuguese dining.'**
+  /// **'Kheti-Kisaani is a platform dedicated to empowering farmers and traders by providing a direct marketplace for crops, grains, and agricultural equipment. Our mission is to ensure fair pricing and transparent transactions for the farming community.'**
   String get exploringTheHiddenGrottos;
 
   /// No description provided for @contactDetailsArePrivate.
@@ -947,7 +947,7 @@ abstract class AppLocalizations {
   /// No description provided for @yourTripBannerDesc.
   ///
   /// In en, this message translates to:
-  /// **'You are viewing your own travel listing. All interactions from other members will appear in your inbox.'**
+  /// **'You are viewing your own product listing. All inquiries from buyers will appear in your inbox.'**
   String get yourTripBannerDesc;
 
   /// No description provided for @hostContactInfo.
@@ -971,7 +971,7 @@ abstract class AppLocalizations {
   /// No description provided for @hostVerifiedDesc.
   ///
   /// In en, this message translates to:
-  /// **'Host verified by HerStay community for safe travel.'**
+  /// **'Host verified by Kheti-Kisaani community for safe travel.'**
   String get hostVerifiedDesc;
 
   /// No description provided for @faqTitle.
@@ -1001,7 +1001,7 @@ abstract class AppLocalizations {
   /// No description provided for @faq2Answer.
   ///
   /// In en, this message translates to:
-  /// **'That is to be decided amongst yourselves. Currently, HerStay does not receive or manage any money from its users. It is highly recommended that you draw up a written agreement before making any payments. As stated in the terms and conditions HerStay is not liable for any payments or agreements and is only intended to connect users with similar travel lodging preferences.'**
+  /// **'That is to be decided amongst yourselves. Currently, Kheti-Kisaani does not receive or manage any money from its users. It is highly recommended that you draw up a written agreement before making any payments. As stated in the terms and conditions Kheti-Kisaani is not liable for any payments or agreements and is only intended to connect users with similar travel lodging preferences.'**
   String get faq2Answer;
 
   /// No description provided for @faq3Question.
@@ -1019,13 +1019,13 @@ abstract class AppLocalizations {
   /// No description provided for @faq4Question.
   ///
   /// In en, this message translates to:
-  /// **'Will HerStay reimburse me if my match cancels or is a no-show?'**
+  /// **'Will Kheti-Kisaani reimburse me if my match cancels or is a no-show?'**
   String get faq4Question;
 
   /// No description provided for @faq4Answer.
   ///
   /// In en, this message translates to:
-  /// **'No. HerStay is not liable for any agreements made in or out of the app. We recommended using written agreements. You may use the app to connect with other users who may be interested in replacing your match/es.'**
+  /// **'No. Kheti-Kisaani is not liable for any agreements made in or out of the app. We recommended using written agreements. You may use the app to connect with other users who may be interested in replacing your match/es.'**
   String get faq4Answer;
 
   /// No description provided for @faq5Question.
