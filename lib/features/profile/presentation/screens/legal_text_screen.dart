@@ -5,6 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/localization/locale_bloc.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 
 import '../../domain/repositories/app_content_repository.dart';
@@ -94,7 +95,7 @@ class _LegalTextScreenState extends State<LegalTextScreen> {
                     return null;
                   },
                 ),
-                40.heightBox,
+                40.height,
               ],
             ),
           );

@@ -175,7 +175,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             color: AppColors.color5A5C5C,
                           ),
                         ),
-                        35.heightBox,
+                        35.height,
                         CustomTextField(
                           label: context.l10n.emailLabel,
                           hint: 'name@example.com',
@@ -188,7 +188,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           keyboardType: TextInputType.emailAddress,
                           validator: AppValidations.validateEmail,
                         ),
-                        35.heightBox,
+                        35.height,
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return CustomGradientButton(
@@ -198,7 +198,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             );
                           },
                         ),
-                        35.heightBox,
+                        35.height,
                       ],
                     ),
                   ),

@@ -6,6 +6,7 @@ import 'package:kisan_app/core/localization/locale_bloc.dart';
 import 'package:kisan_app/core/theme/theme_bloc.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/utils/ui_feedback.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 
@@ -43,7 +44,7 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
 
-            24.heightBox,
+            24.height,
 
             // --- LANGUAGE SECTION ---
             _SettingsSectionHeader(title: context.l10n.changeLanguage),
@@ -77,7 +78,7 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
 
-            24.heightBox,
+            24.height,
 
             // --- NOTIFICATIONS SECTION ---
             _SettingsSectionHeader(title: context.l10n.notifications),
@@ -90,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
 
-            24.heightBox,
+            24.height,
 
             // --- LEGAL SECTION ---
             _SettingsSectionHeader(title: 'Legal'),
@@ -105,7 +106,7 @@ class SettingsScreen extends StatelessWidget {
               onTap: () => context.push(AppRouter.termsOfService),
             ),
 
-            40.heightBox,
+            40.height,
             Center(
               child: Text(
                 context.l10n.versionText,

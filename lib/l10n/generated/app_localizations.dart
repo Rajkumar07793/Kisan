@@ -167,25 +167,25 @@ abstract class AppLocalizations {
   /// No description provided for @searchHint.
   ///
   /// In en, this message translates to:
-  /// **'Search'**
+  /// **'Search crops, grains, tractors...'**
   String get searchHint;
 
   /// No description provided for @featuredTrips.
   ///
   /// In en, this message translates to:
-  /// **'Featured Trips'**
+  /// **'Featured Listings'**
   String get featuredTrips;
 
   /// No description provided for @ongoingTrips.
   ///
   /// In en, this message translates to:
-  /// **'Ongoing Trips'**
+  /// **'Ongoing Trades'**
   String get ongoingTrips;
 
   /// No description provided for @upcomingTrips.
   ///
   /// In en, this message translates to:
-  /// **'Upcoming Trips'**
+  /// **'Upcoming Trades'**
   String get upcomingTrips;
 
   /// No description provided for @viewAll.
@@ -221,7 +221,7 @@ abstract class AppLocalizations {
   /// No description provided for @signInSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Sign in to continue your trade journey'**
+  /// **'Sign in to continue your farming journey'**
   String get signInSubtitle;
 
   /// No description provided for @emailLabel.
@@ -407,49 +407,43 @@ abstract class AppLocalizations {
   /// No description provided for @navHome.
   ///
   /// In en, this message translates to:
-  /// **'HOME'**
+  /// **'Home'**
   String get navHome;
 
   /// No description provided for @navSearch.
   ///
   /// In en, this message translates to:
-  /// **'SEARCH'**
+  /// **'Search'**
   String get navSearch;
 
-  /// No description provided for @navMyTrip.
+  /// No description provided for @navMyTractors.
   ///
   /// In en, this message translates to:
-  /// **'MY TRADES'**
-  String get navMyTrip;
+  /// **'My Tractors'**
+  String get navMyTractors;
 
-  /// No description provided for @activeTrips.
+  /// No description provided for @navBookings.
   ///
   /// In en, this message translates to:
-  /// **'Active Trades'**
-  String get activeTrips;
-
-  /// No description provided for @pastTrips.
-  ///
-  /// In en, this message translates to:
-  /// **'Past Trades'**
-  String get pastTrips;
+  /// **'Bookings'**
+  String get navBookings;
 
   /// No description provided for @navChat.
   ///
   /// In en, this message translates to:
-  /// **'CHAT'**
+  /// **'Chat'**
   String get navChat;
 
   /// No description provided for @navProfile.
   ///
   /// In en, this message translates to:
-  /// **'PROFILE'**
+  /// **'Profile'**
   String get navProfile;
 
   /// No description provided for @setting.
   ///
   /// In en, this message translates to:
-  /// **'SETTING'**
+  /// **'Settings'**
   String get setting;
 
   /// No description provided for @chatAction.
@@ -491,7 +485,7 @@ abstract class AppLocalizations {
   /// No description provided for @myTripsTitle.
   ///
   /// In en, this message translates to:
-  /// **'My Trips'**
+  /// **'My Trades'**
   String get myTripsTitle;
 
   /// No description provided for @security.
@@ -533,19 +527,19 @@ abstract class AppLocalizations {
   /// No description provided for @aboutTrip.
   ///
   /// In en, this message translates to:
-  /// **'About this trip'**
+  /// **'About this listing'**
   String get aboutTrip;
 
   /// No description provided for @hostSection.
   ///
   /// In en, this message translates to:
-  /// **'Host'**
+  /// **'Owner'**
   String get hostSection;
 
   /// No description provided for @joinTripAction.
   ///
   /// In en, this message translates to:
-  /// **'Join Trip'**
+  /// **'Contact Owner'**
   String get joinTripAction;
 
   /// No description provided for @perPerson.
@@ -605,7 +599,7 @@ abstract class AppLocalizations {
   /// No description provided for @noTripsFound.
   ///
   /// In en, this message translates to:
-  /// **'No trips found'**
+  /// **'No listings found'**
   String get noTripsFound;
 
   /// No description provided for @appSettings.
@@ -644,6 +638,12 @@ abstract class AppLocalizations {
   /// **'Search crops, grains, tractors...'**
   String get searchPlaceholder;
 
+  /// No description provided for @searchPlaceholderHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Search village, city or service...'**
+  String get searchPlaceholderHome;
+
   /// No description provided for @exploreDestinations.
   ///
   /// In en, this message translates to:
@@ -655,6 +655,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No matches found for your search'**
   String get noResultsFound;
+
+  /// No description provided for @tractorDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Tractor Dashboard'**
+  String get tractorDashboard;
+
+  /// No description provided for @manageYourTractors.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your bookings and tractors'**
+  String get manageYourTractors;
+
+  /// No description provided for @quickActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Actions'**
+  String get quickActions;
+
+  /// No description provided for @addTractor.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Tractor'**
+  String get addTractor;
+
+  /// No description provided for @registerNewTractor.
+  ///
+  /// In en, this message translates to:
+  /// **'Register a new tractor'**
+  String get registerNewTractor;
+
+  /// No description provided for @viewBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'View Bookings'**
+  String get viewBookings;
+
+  /// No description provided for @newBookingsPending.
+  ///
+  /// In en, this message translates to:
+  /// **'new bookings pending'**
+  String get newBookingsPending;
+
+  /// No description provided for @chooseServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Services'**
+  String get chooseServices;
+
+  /// No description provided for @nearbyTractors.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby Tractors'**
+  String get nearbyTractors;
+
+  /// No description provided for @available.
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get available;
+
+  /// No description provided for @busy.
+  ///
+  /// In en, this message translates to:
+  /// **'Busy'**
+  String get busy;
+
+  /// No description provided for @verified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get verified;
+
+  /// No description provided for @reviews.
+  ///
+  /// In en, this message translates to:
+  /// **'reviews'**
+  String get reviews;
+
+  /// No description provided for @ploughing.
+  ///
+  /// In en, this message translates to:
+  /// **'Ploughing'**
+  String get ploughing;
+
+  /// No description provided for @harvesting.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvesting'**
+  String get harvesting;
+
+  /// No description provided for @sugarcaneLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Sugarcane Loading'**
+  String get sugarcaneLoading;
+
+  /// No description provided for @threshing.
+  ///
+  /// In en, this message translates to:
+  /// **'Threshing'**
+  String get threshing;
+
+  /// No description provided for @transport.
+  ///
+  /// In en, this message translates to:
+  /// **'Transport'**
+  String get transport;
+
+  /// No description provided for @rotavator.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotavator'**
+  String get rotavator;
+
+  /// No description provided for @laserLeveling.
+  ///
+  /// In en, this message translates to:
+  /// **'Laser Leveling'**
+  String get laserLeveling;
+
+  /// No description provided for @sowing.
+  ///
+  /// In en, this message translates to:
+  /// **'Sowing'**
+  String get sowing;
 
   /// No description provided for @reviewBooking.
   ///
@@ -695,7 +821,7 @@ abstract class AppLocalizations {
   /// No description provided for @viewMyTrips.
   ///
   /// In en, this message translates to:
-  /// **'View My Trips'**
+  /// **'View My Trades'**
   String get viewMyTrips;
 
   /// No description provided for @yourJourneyToSafe.
@@ -845,7 +971,7 @@ abstract class AppLocalizations {
   /// No description provided for @theJourney.
   ///
   /// In en, this message translates to:
-  /// **'The Journey'**
+  /// **'The Details'**
   String get theJourney;
 
   /// No description provided for @location.
@@ -857,7 +983,7 @@ abstract class AppLocalizations {
   /// No description provided for @host.
   ///
   /// In en, this message translates to:
-  /// **'Host'**
+  /// **'Owner'**
   String get host;
 
   /// No description provided for @theExperience.
@@ -887,7 +1013,7 @@ abstract class AppLocalizations {
   /// No description provided for @viewAllTrip.
   ///
   /// In en, this message translates to:
-  /// **'VIEW ALL TRIP'**
+  /// **'VIEW ALL LISTINGS'**
   String get viewAllTrip;
 
   /// No description provided for @elenaR.
@@ -911,13 +1037,13 @@ abstract class AppLocalizations {
   /// No description provided for @interestedUsers.
   ///
   /// In en, this message translates to:
-  /// **'Interested Users'**
+  /// **'Interested Buyers'**
   String get interestedUsers;
 
   /// No description provided for @callHost.
   ///
   /// In en, this message translates to:
-  /// **'Call Host'**
+  /// **'Call Owner'**
   String get callHost;
 
   /// No description provided for @message.
@@ -935,13 +1061,13 @@ abstract class AppLocalizations {
   /// No description provided for @manageTrip.
   ///
   /// In en, this message translates to:
-  /// **'Manage Trip'**
+  /// **'Manage Listing'**
   String get manageTrip;
 
   /// No description provided for @thisIsYourTrip.
   ///
   /// In en, this message translates to:
-  /// **'THIS IS YOUR TRIP'**
+  /// **'THIS IS YOUR LISTING'**
   String get thisIsYourTrip;
 
   /// No description provided for @yourTripBannerDesc.
@@ -953,25 +1079,25 @@ abstract class AppLocalizations {
   /// No description provided for @hostContactInfo.
   ///
   /// In en, this message translates to:
-  /// **'HOST CONTACT INFORMATION'**
+  /// **'OWNER CONTACT INFORMATION'**
   String get hostContactInfo;
 
   /// No description provided for @messageHost.
   ///
   /// In en, this message translates to:
-  /// **'Message Host'**
+  /// **'Message Owner'**
   String get messageHost;
 
   /// No description provided for @organizerDesc.
   ///
   /// In en, this message translates to:
-  /// **'You are the organizer of this journey.'**
+  /// **'You are the owner of this listing.'**
   String get organizerDesc;
 
   /// No description provided for @hostVerifiedDesc.
   ///
   /// In en, this message translates to:
-  /// **'Host verified by Kheti-Kisaani community for safe travel.'**
+  /// **'Owner verified by Kheti-Kisaani community for safe trade.'**
   String get hostVerifiedDesc;
 
   /// No description provided for @faqTitle.
@@ -1361,20 +1487,32 @@ abstract class AppLocalizations {
   /// No description provided for @countryLabel.
   ///
   /// In en, this message translates to:
-  /// **'COUNTRY'**
+  /// **'Country'**
   String get countryLabel;
 
   /// No description provided for @stateLabel.
   ///
   /// In en, this message translates to:
-  /// **'STATE'**
+  /// **'State'**
   String get stateLabel;
 
   /// No description provided for @cityLabel.
   ///
   /// In en, this message translates to:
-  /// **'CITY'**
+  /// **'City'**
   String get cityLabel;
+
+  /// No description provided for @districtLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'District'**
+  String get districtLabel;
+
+  /// No description provided for @villageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Village'**
+  String get villageLabel;
 
   /// No description provided for @pleaseSelectACity.
   ///

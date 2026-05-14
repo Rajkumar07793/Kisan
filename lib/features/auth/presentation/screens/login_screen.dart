@@ -14,6 +14,7 @@ import '../../../../core/widgets/common/custom_app_bar.dart';
 import '../../../../core/widgets/common/custom_text_field.dart';
 import '../bloc/auth_bloc.dart';
 import '../widgets/common_button.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,7 +26,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController(
-    text: kDebugMode ? 'rajkumar.webwiders@gmail.com' : '',
+    text: kDebugMode ? 'rajkumar07793@gmail.com' : '',
   );
   final _passwordController = TextEditingController(
     text: kDebugMode ? '123456' : '',
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state.status == AuthStatus.authenticated) {
-          context.go(AppRouter.home);
+          context.go(AppRouter.roleSelect);
         } else if (state.errorMessage != null) {
           if (state.errorMessage!.contains('confirmed')) {
             context.pushNamed(
@@ -109,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontSize: 48,
                     ),
                   ),
-                  10.heightBox,
+                  10.height,
                   RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
@@ -118,20 +119,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
                       ),
-                      text: context.l10n.yourJourneyToSafe,
+                      text: "किफायती, सुरक्षित और ",
                       children: [
                         TextSpan(
-                          text: context.l10n.inspiredTravel,
+                          text: "बेहतर खेती ",
                           style: TextStyle(
                             color: AppColors.primary.withValues(alpha: 0.6),
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        TextSpan(text: context.l10n.startsHere),
+                        const TextSpan(text: "की शुरुआत यहाँ से।"),
                       ],
                     ),
                   ),
-                  10.heightBox,
+                  10.height,
                   Container(
                     margin: EdgeInsets.all(10),
                     padding: EdgeInsets.all(20),
@@ -160,16 +161,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          context
-                              .l10n
-                              .pleaseEnterYourDetailsToContinueYourAdventure,
+                          "अपनी कृषि यात्रा जारी रखने के लिए विवरण दर्ज करें।",
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                             color: AppColors.color5A5C5C,
                           ),
                         ),
-                        25.heightBox,
+                        10.height,
                         CustomTextField(
                           label: context.l10n.emailLabel,
                           hint: 'user@kheti-kisaani.com',
@@ -182,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           keyboardType: TextInputType.emailAddress,
                           validator: AppValidations.validateEmail,
                         ),
-                        10.heightBox,
+                        10.height,
                         CustomTextField(
                           label: context.l10n.passwordLabel,
                           hint: '********',
@@ -209,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           validator: AppValidations.validatePassword,
                         ),
-                        2.heightBox,
+                        2.height,
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -219,7 +218,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text(context.l10n.forgotPassword),
                           ),
                         ),
-                        10.heightBox,
+                        10.height,
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return CustomGradientButton(
@@ -230,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             );
                           },
                         ),
-                        15.heightBox,
+                        15.height,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -256,7 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ],
                         ),
-                        15.heightBox,
+                        15.height,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

@@ -139,7 +139,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                     ),
                                   ],
                                 ),
-                                4.heightBox,
+                                4.height,
                                 Text(
                                   maxLines: 1,
                                   userList[index]['subtitle'],

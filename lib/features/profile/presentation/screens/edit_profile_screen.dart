@@ -3,10 +3,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/utils/app_image_picker.dart';
 import 'package:kisan_app/core/utils/app_overlays.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 import 'package:kisan_app/core/widgets/common/custom_avatar.dart';
 import 'package:kisan_app/core/widgets/common/custom_dropdown.dart';
@@ -15,8 +18,6 @@ import 'package:kisan_app/core/widgets/common/gradient_button.dart';
 import 'package:kisan_app/core/widgets/common/location_prediction_field.dart';
 import 'package:kisan_app/features/auth/data/models/user_model.dart';
 import 'package:kisan_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -85,7 +86,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              20.heightBox,
+              20.height,
 
               // --- PROFILE PHOTO ---
               Stack(
@@ -139,7 +140,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ),
                 ],
               ),
-              12.heightBox,
+              12.height,
               Text(
                 'TAP TO UPDATE PHOTO',
                 style: context.textTheme.labelSmall?.copyWith(
@@ -149,7 +150,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   fontSize: 10,
                 ),
               ),
-              24.heightBox,
+              24.height,
 
               // --- FORM FIELDS ---
               Container(
@@ -174,7 +175,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   // showShadow: true,
                 ),
               ),
-              16.heightBox,
+              16.height,
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -196,7 +197,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   // showShadow: true,
                 ),
               ),
-              16.heightBox,
+              16.height,
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -224,7 +225,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   },
                 ),
               ),
-              16.heightBox,
+              16.height,
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -250,7 +251,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   },
                 ),
               ),
-              16.heightBox,
+              16.height,
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -275,7 +276,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       maxLines: 6,
                       // showShadow: true,
                     ),
-                    12.heightBox,
+                    12.height,
                     Align(
                       alignment: Alignment.bottomRight,
                       child: ValueListenableBuilder<TextEditingValue>(
@@ -295,7 +296,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
               ),
 
-              32.heightBox,
+              32.height,
 
               // --- ACTIONS ---
               BlocConsumer<AuthBloc, AuthState>(
@@ -342,7 +343,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 },
               ),
 
-              40.heightBox,
+              40.height,
             ],
           ),
         ),
@@ -359,20 +360,20 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            20.heightBox,
+            20.height,
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.success.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.check_circle_rounded,
                 color: AppColors.success,
                 size: 60,
               ),
             ),
-            24.heightBox,
+            24.height,
             const Text(
               'Profile Updated!',
               style: TextStyle(
@@ -381,7 +382,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 color: Colors.black87,
               ),
             ),
-            12.heightBox,
+            12.height,
             Text(
               'Your changes have been saved successfully. Your travel story is now up to date.',
               textAlign: TextAlign.center,
@@ -391,7 +392,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 height: 1.5,
               ),
             ),
-            32.heightBox,
+            32.height,
             GradientButton(
               text: 'Perfect',
               height: 50,
@@ -400,7 +401,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 context.pop(); // Go back to profile
               },
             ),
-            8.heightBox,
+            8.height,
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/services/injection_container.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 import 'package:kisan_app/core/widgets/common/custom_loader.dart';
 import 'package:kisan_app/features/profile/presentation/bloc/faqs/faqs_bloc.dart';
@@ -23,7 +24,7 @@ class FAQsScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [30.heightBox, _buildFaqList(context), 40.heightBox],
+            children: [30.height, _buildFaqList(context), 40.height],
           ),
         ),
       ),
@@ -53,7 +54,7 @@ class FAQsScreen extends StatelessWidget {
                     style: const TextStyle(color: Colors.red),
                     textAlign: TextAlign.center,
                   ),
-                  16.heightBox,
+                  16.height,
                   ElevatedButton(
                     onPressed: () => context.read<FaqsBloc>().add(FetchFaqs()),
                     child: Text(context.l10n.retry),

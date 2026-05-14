@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/constants/env_config.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
 

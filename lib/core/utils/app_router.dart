@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kisan_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/signup_screen.dart';
+import 'package:kisan_app/features/auth/presentation/screens/role_select_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:kisan_app/features/chat/presentation/screens/conversation_screen.dart';
 import 'package:kisan_app/features/chat/presentation/screens/groups_conversation_screen.dart';
@@ -24,6 +25,7 @@ class AppRouter {
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String signup = '/signup';
+  static const String roleSelect = '/role-select';
   static const String home = '/home';
   static const String search = '/search';
   static const String trips = '/trips';
@@ -73,6 +75,15 @@ class AppRouter {
         path: signup,
         name: signup,
         builder: (context, state) => const SignUpScreen(),
+      ),
+      GoRoute(
+        path: roleSelect,
+        name: roleSelect,
+        builder: (context, state) => RoleSelectScreen(
+          onSelect: (role) {
+            context.go(home, extra: role);
+          },
+        ),
       ),
 
       // GoRoute(
@@ -161,7 +172,12 @@ class AppRouter {
       /// --- PERSISTENT BOTTOM NAV SHELL ---
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
-          return MainScreen(navigationShell: navigationShell);
+          final role = state.extra as String? ?? 'kisan';
+          return MainScreen(
+            role: role,
+            onRoleSwitch: () => context.go(roleSelect),
+            navigationShell: navigationShell,
+          );
         },
         branches: [
           // Branch 0: Home

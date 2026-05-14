@@ -43,16 +43,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lightMode => 'Light Mode';
 
   @override
-  String get searchHint => 'Search';
+  String get searchHint => 'Search crops, grains, tractors...';
 
   @override
-  String get featuredTrips => 'Featured Trips';
+  String get featuredTrips => 'Featured Listings';
 
   @override
-  String get ongoingTrips => 'Ongoing Trips';
+  String get ongoingTrips => 'Ongoing Trades';
 
   @override
-  String get upcomingTrips => 'Upcoming Trips';
+  String get upcomingTrips => 'Upcoming Trades';
 
   @override
   String get viewAll => 'View All';
@@ -70,7 +70,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome Back';
 
   @override
-  String get signInSubtitle => 'Sign in to continue your trade journey';
+  String get signInSubtitle => 'Sign in to continue your farming journey';
 
   @override
   String get emailLabel => 'Email Address';
@@ -168,28 +168,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get whatInspiresYou => 'What are you looking for?';
 
   @override
-  String get navHome => 'HOME';
+  String get navHome => 'Home';
 
   @override
-  String get navSearch => 'SEARCH';
+  String get navSearch => 'Search';
 
   @override
-  String get navMyTrip => 'MY TRADES';
+  String get navMyTractors => 'My Tractors';
 
   @override
-  String get activeTrips => 'Active Trades';
+  String get navBookings => 'Bookings';
 
   @override
-  String get pastTrips => 'Past Trades';
+  String get navChat => 'Chat';
 
   @override
-  String get navChat => 'CHAT';
+  String get navProfile => 'Profile';
 
   @override
-  String get navProfile => 'PROFILE';
-
-  @override
-  String get setting => 'SETTING';
+  String get setting => 'Settings';
 
   @override
   String get chatAction => 'Chat';
@@ -211,7 +208,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get personalInfo => 'Personal Information';
 
   @override
-  String get myTripsTitle => 'My Trips';
+  String get myTripsTitle => 'My Trades';
 
   @override
   String get security => 'Security';
@@ -232,13 +229,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get versionText => 'Version 1.0.0';
 
   @override
-  String get aboutTrip => 'About this trip';
+  String get aboutTrip => 'About this listing';
 
   @override
-  String get hostSection => 'Host';
+  String get hostSection => 'Owner';
 
   @override
-  String get joinTripAction => 'Join Trip';
+  String get joinTripAction => 'Contact Owner';
 
   @override
   String get perPerson => 'per person';
@@ -268,7 +265,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get past => 'Past';
 
   @override
-  String get noTripsFound => 'No trips found';
+  String get noTripsFound => 'No listings found';
 
   @override
   String get appSettings => 'App Settings';
@@ -289,10 +286,76 @@ class AppLocalizationsEn extends AppLocalizations {
   String get searchPlaceholder => 'Search crops, grains, tractors...';
 
   @override
+  String get searchPlaceholderHome => 'Search village, city or service...';
+
+  @override
   String get exploreDestinations => 'Explore Marketplace';
 
   @override
   String get noResultsFound => 'No matches found for your search';
+
+  @override
+  String get tractorDashboard => 'Tractor Dashboard';
+
+  @override
+  String get manageYourTractors => 'Manage your bookings and tractors';
+
+  @override
+  String get quickActions => 'Quick Actions';
+
+  @override
+  String get addTractor => 'Add Tractor';
+
+  @override
+  String get registerNewTractor => 'Register a new tractor';
+
+  @override
+  String get viewBookings => 'View Bookings';
+
+  @override
+  String get newBookingsPending => 'new bookings pending';
+
+  @override
+  String get chooseServices => 'Choose Services';
+
+  @override
+  String get nearbyTractors => 'Nearby Tractors';
+
+  @override
+  String get available => 'Available';
+
+  @override
+  String get busy => 'Busy';
+
+  @override
+  String get verified => 'Verified';
+
+  @override
+  String get reviews => 'reviews';
+
+  @override
+  String get ploughing => 'Ploughing';
+
+  @override
+  String get harvesting => 'Harvesting';
+
+  @override
+  String get sugarcaneLoading => 'Sugarcane Loading';
+
+  @override
+  String get threshing => 'Threshing';
+
+  @override
+  String get transport => 'Transport';
+
+  @override
+  String get rotavator => 'Rotavator';
+
+  @override
+  String get laserLeveling => 'Laser Leveling';
+
+  @override
+  String get sowing => 'Sowing';
 
   @override
   String get reviewBooking => 'Review Booking';
@@ -313,7 +376,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookingSuccessful => 'Booking Successful!';
 
   @override
-  String get viewMyTrips => 'View My Trips';
+  String get viewMyTrips => 'View My Trades';
 
   @override
   String get yourJourneyToSafe => 'Your gateway to fair, ';
@@ -390,13 +453,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get septDate => 'Sept 15 - Sep 20, 2024';
 
   @override
-  String get theJourney => 'The Journey';
+  String get theJourney => 'The Details';
 
   @override
   String get location => 'Location';
 
   @override
-  String get host => 'Host';
+  String get host => 'Owner';
 
   @override
   String get theExperience => 'The Experience';
@@ -412,7 +475,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginToMessage => 'Login to Message';
 
   @override
-  String get viewAllTrip => 'VIEW ALL TRIP';
+  String get viewAllTrip => 'VIEW ALL LISTINGS';
 
   @override
   String get elenaR => 'Elena R.';
@@ -425,10 +488,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get details => 'Details';
 
   @override
-  String get interestedUsers => 'Interested Users';
+  String get interestedUsers => 'Interested Buyers';
 
   @override
-  String get callHost => 'Call Host';
+  String get callHost => 'Call Owner';
 
   @override
   String get message => 'Message';
@@ -437,27 +500,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginToConnect => 'Login to Connect';
 
   @override
-  String get manageTrip => 'Manage Trip';
+  String get manageTrip => 'Manage Listing';
 
   @override
-  String get thisIsYourTrip => 'THIS IS YOUR TRIP';
+  String get thisIsYourTrip => 'THIS IS YOUR LISTING';
 
   @override
   String get yourTripBannerDesc =>
       'You are viewing your own product listing. All inquiries from buyers will appear in your inbox.';
 
   @override
-  String get hostContactInfo => 'HOST CONTACT INFORMATION';
+  String get hostContactInfo => 'OWNER CONTACT INFORMATION';
 
   @override
-  String get messageHost => 'Message Host';
+  String get messageHost => 'Message Owner';
 
   @override
-  String get organizerDesc => 'You are the organizer of this journey.';
+  String get organizerDesc => 'You are the owner of this listing.';
 
   @override
   String get hostVerifiedDesc =>
-      'Host verified by Kheti-Kisaani community for safe travel.';
+      'Owner verified by Kheti-Kisaani community for safe trade.';
 
   @override
   String get faqTitle => 'Frequently Asked Questions';
@@ -664,13 +727,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseSelectAState => 'Please select a state';
 
   @override
-  String get countryLabel => 'COUNTRY';
+  String get countryLabel => 'Country';
 
   @override
-  String get stateLabel => 'STATE';
+  String get stateLabel => 'State';
 
   @override
-  String get cityLabel => 'CITY';
+  String get cityLabel => 'City';
+
+  @override
+  String get districtLabel => 'District';
+
+  @override
+  String get villageLabel => 'Village';
 
   @override
   String get pleaseSelectACity => 'Select a city';

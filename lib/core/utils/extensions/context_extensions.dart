@@ -32,7 +32,4 @@ extension ContextExtensions on BuildContext {
   void popPage<T>([T? result]) => Navigator.of(this).pop(result);
 }
 
-extension SpacingExtensions on num {
-  Widget get heightBox => SizedBox(height: toDouble());
-  Widget get widthBox => SizedBox(width: toDouble());
-}
+

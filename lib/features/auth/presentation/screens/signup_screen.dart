@@ -8,6 +8,7 @@ import 'package:kisan_app/core/constants/enums/app_enums.dart';
 import 'package:kisan_app/core/utils/app_overlays.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 
 import '../../../../core/utils/app_validations.dart';
 import '../../../../core/widgets/common/custom_app_bar.dart';
@@ -29,7 +30,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     text: kDebugMode ? 'Kheti-Kisaani User' : '',
   );
   final _emailController = TextEditingController(
-    text: kDebugMode ? 'rajkumar.webwiders@gmail.com' : '',
+    text: kDebugMode ? 'rajkumar07793@gmail.com' : '',
   );
   final _passwordController = TextEditingController(
     text: kDebugMode ? '123456' : '',
@@ -128,13 +129,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                10.heightBox,
+                10.height,
                 Text(
                   context.l10n.startYourCurated,
                   style: context.textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
-                50.heightBox,
+                50.height,
                 CustomTextField(
                   label: context.l10n.nameLabel,
                   hint: context.l10n.nameHint,
@@ -146,7 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   validator: AppValidations.validateName,
                 ),
-                24.heightBox,
+                24.height,
                 CustomTextField(
                   label: context.l10n.emailLabel,
                   hint: context.l10n.emailHint,
@@ -159,7 +160,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                   validator: AppValidations.validateEmail,
                 ),
-                24.heightBox,
+                24.height,
                 CustomPhoneField(
                   label: context.l10n.mobileNumber,
                   hint: context.l10n.mobileNumberHint,
@@ -170,7 +171,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   },
                 ),
 
-                24.heightBox,
+                24.height,
                 ValueListenableBuilder<bool>(
                   valueListenable: hideAndShowPassword,
                   builder: (context, hideShow, child) {
@@ -201,7 +202,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     );
                   },
                 ),
-                30.heightBox,
+                30.height,
                 // Text(
                 //   context.l10n.whatInspiresYou,
                 //   style: TextStyle(
@@ -286,7 +287,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 //     );
                 //   },
                 // ),
-                45.heightBox,
+                45.height,
                 BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, state) {
                     return CustomGradientButton(
@@ -298,7 +299,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   },
                 ),
 
-                15.heightBox,
+                15.height,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

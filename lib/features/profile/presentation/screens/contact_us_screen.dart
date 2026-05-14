@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/constants/app_database_constants.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/utils/ui_feedback.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 import 'package:kisan_app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -89,7 +90,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [32.heightBox, _buildContactForm(context), 40.heightBox],
+          children: [32.height, _buildContactForm(context), 40.height],
         ),
       ),
     );
@@ -109,7 +110,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
           controller: _messageController,
           maxLines: 5,
         ),
-        50.heightBox,
+        50.height,
         CustomGradientButton(
           text: "Send",
           isLoading: _isSubmitting,

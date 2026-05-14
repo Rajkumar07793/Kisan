@@ -40,6 +40,8 @@ class AppAssets {
   static const String verifiedProfile = '${_imagePath}verifiedProfile.png';
   static const String elenaProfile = '${_imagePath}elenaProfile.png';
   static const String myTripImage1 = '${_imagePath}myTripImage1.png';
+  static const String heroBanner = '${_imagePath}hero_banner.png';
+  static const String categoryGrains = '${_imagePath}category_grains.png';
 
   // --- Others ---
   static const String env = '.env';

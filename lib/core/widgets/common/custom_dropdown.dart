@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
   final T? value;
@@ -36,7 +37,7 @@ class CustomDropdown<T> extends StatelessWidget {
               color: AppColors.primary,
             ),
           ),
-          8.heightBox,
+          8.height,
         ],
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),

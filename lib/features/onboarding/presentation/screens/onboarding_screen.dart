@@ -8,6 +8,7 @@ import 'package:kisan_app/core/constants/shared_preference_keys.dart';
 import 'package:kisan_app/core/services/injection_container.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/custom_loader.dart';
 import 'package:kisan_app/core/widgets/common/gradient_button.dart';
 import 'package:kisan_app/data/providers/local/storage_service.dart';
@@ -145,7 +146,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                   ),
-                  48.heightBox,
+                  48.height,
 
                   // New Gradient Button
                   GradientButton(
@@ -233,7 +234,7 @@ class OnboardingPage extends StatelessWidget {
                   )
                 : _buildAsset(entity.assetPath),
           ),
-          40.heightBox,
+          40.height,
 
           // --- TEXT CONTENT ---
           Expanded(
@@ -258,13 +259,13 @@ class OnboardingPage extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    12.heightBox,
+                    12.height,
                   ],
                   Align(
                     alignment: Alignment.center,
                     child: _buildTitle(context),
                   ),
-                  16.heightBox,
+                  16.height,
                   Text(
                     entity.description,
                     style: context.textTheme.bodyMedium?.copyWith(height: 1.5),

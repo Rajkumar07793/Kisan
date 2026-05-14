@@ -44,7 +44,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get lightMode => 'लाइट मोड';
 
   @override
-  String get searchHint => 'खोजें';
+  String get searchHint => 'फसल, अनाज, ट्रैक्टर खोजें...';
 
   @override
   String get featuredTrips => 'विशेष उत्पाद';
@@ -71,7 +71,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get welcomeBack => 'वापस स्वागत है';
 
   @override
-  String get signInSubtitle => 'अपना व्यापार जारी रखने के लिए साइन इन करें';
+  String get signInSubtitle => 'अपनी कृषि यात्रा जारी रखने के लिए साइन इन करें';
 
   @override
   String get emailLabel => 'ईमेल';
@@ -175,13 +175,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get navSearch => 'खोजें';
 
   @override
-  String get navMyTrip => 'मेरे सौदे';
+  String get navMyTractors => 'मेरे ट्रैक्टर';
 
   @override
-  String get activeTrips => 'सक्रिय सौदे';
-
-  @override
-  String get pastTrips => 'पिछले सौदे';
+  String get navBookings => 'बुकिंग';
 
   @override
   String get navChat => 'चैट';
@@ -233,16 +230,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get versionText => 'संस्करण 1.0.0';
 
   @override
-  String get aboutTrip => 'इस यात्रा के बारे में';
+  String get aboutTrip => 'इस सूची के बारे में';
 
   @override
-  String get hostSection => 'होस्ट';
+  String get hostSection => 'मालिक';
 
   @override
-  String get joinTripAction => 'यात्रा में शामिल हों';
+  String get joinTripAction => 'मालिक से संपर्क करें';
 
   @override
-  String get perPerson => 'प्रति व्यक्ति';
+  String get perPerson => 'प्रति नग/एकड़';
 
   @override
   String get chatInbox => 'इनबॉक्स';
@@ -269,7 +266,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get past => 'पिछली';
 
   @override
-  String get noTripsFound => 'कोई सौदा नहीं मिला';
+  String get noTripsFound => 'कोई सूची नहीं मिली';
 
   @override
   String get appSettings => 'ऐप सेटिंग्स';
@@ -290,10 +287,76 @@ class AppLocalizationsHi extends AppLocalizations {
   String get searchPlaceholder => 'फसल, अनाज, ट्रैक्टर खोजें...';
 
   @override
+  String get searchPlaceholderHome => 'गाँव, शहर या सेवा खोजें...';
+
+  @override
   String get exploreDestinations => 'बाजार का पता लगाएं';
 
   @override
   String get noResultsFound => 'आपकी खोज के लिए कोई मेल नहीं मिला';
+
+  @override
+  String get tractorDashboard => 'ट्रैक्टर डैशबोर्ड';
+
+  @override
+  String get manageYourTractors => 'अपनी बुकिंग और ट्रैक्टर प्रबंधित करें';
+
+  @override
+  String get quickActions => 'त्वरित कार्य';
+
+  @override
+  String get addTractor => 'ट्रैक्टर जोड़ें';
+
+  @override
+  String get registerNewTractor => 'नया ट्रैक्टर रजिस्टर करें';
+
+  @override
+  String get viewBookings => 'बुकिंग देखें';
+
+  @override
+  String get newBookingsPending => 'नई बुकिंग प्रतीक्षारत';
+
+  @override
+  String get chooseServices => 'सेवाएं चुनें';
+
+  @override
+  String get nearbyTractors => 'नजदीकी ट्रैक्टर';
+
+  @override
+  String get available => 'उपलब्ध';
+
+  @override
+  String get busy => 'व्यस्त';
+
+  @override
+  String get verified => 'सत्यापित';
+
+  @override
+  String get reviews => 'समीक्षा';
+
+  @override
+  String get ploughing => 'जुताई';
+
+  @override
+  String get harvesting => 'कटाई';
+
+  @override
+  String get sugarcaneLoading => 'गन्ना लोडिंग';
+
+  @override
+  String get threshing => 'थ्रेशिंग';
+
+  @override
+  String get transport => 'ढुलाई';
+
+  @override
+  String get rotavator => 'रोटावेटर';
+
+  @override
+  String get laserLeveling => 'लेज़र लेवलिंग';
+
+  @override
+  String get sowing => 'बुआई';
 
   @override
   String get reviewBooking => 'बुकिंग की समीक्षा करें';
@@ -327,7 +390,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get pleaseEnterYourDetailsToContinueYourAdventure =>
-      'अपना साहसिक कार्य जारी रखने के लिए कृपया अपना विवरण दर्ज करें।';
+      'अपनी कृषि यात्रा जारी रखने के लिए कृपया अपना विवरण दर्ज करें।';
 
   @override
   String get or => 'या';
@@ -337,7 +400,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get forgotPasswordSubtitle =>
-      'चिंता न करें, यह सबसे अच्छे लोगों के साथ होता है। हमें अपना ईमेल बताएं और हम आपको आपकी यात्रा पर वापस लाने के लिए एक रिकवरी लिंक भेजेंगे।';
+      'चिंता न करें, यह होता है। हमें अपना ईमेल बताएं और हम आपको वापस जोड़ने के लिए एक रिकवरी लिंक भेजेंगे।';
 
   @override
   String get resetPassword => 'पासवर्ड रीसेट करें';
@@ -391,13 +454,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get septDate => 'Sept 15 - Sep 20, 2024';
 
   @override
-  String get theJourney => 'सौदा';
+  String get theJourney => 'विवरण';
 
   @override
   String get location => 'स्थान';
 
   @override
-  String get host => 'होस्ट';
+  String get host => 'मालिक';
 
   @override
   String get theExperience => 'अनुभव';
@@ -413,7 +476,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get loginToMessage => 'संदेश भेजने के लिए लॉगिन करें';
 
   @override
-  String get viewAllTrip => 'सभी सौदे देखें';
+  String get viewAllTrip => 'सभी उत्पाद देखें';
 
   @override
   String get elenaR => 'एलेना आर.';
@@ -426,10 +489,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get details => 'विवरण';
 
   @override
-  String get interestedUsers => 'रुचि रखने वाले उपयोगकर्ता';
+  String get interestedUsers => 'रुचि रखने वाले खरीदार';
 
   @override
-  String get callHost => 'होस्ट को कॉल करें';
+  String get callHost => 'मालिक को कॉल करें';
 
   @override
   String get message => 'संदेश';
@@ -438,23 +501,23 @@ class AppLocalizationsHi extends AppLocalizations {
   String get loginToConnect => 'कनेक्ट करने के लिए लॉगिन करें';
 
   @override
-  String get manageTrip => 'यात्रा प्रबंधित करें';
+  String get manageTrip => 'सूची प्रबंधित करें';
 
   @override
-  String get thisIsYourTrip => 'यह आपकी यात्रा है';
+  String get thisIsYourTrip => 'यह आपकी सूची है';
 
   @override
   String get yourTripBannerDesc =>
       'आप अपनी स्वयं की उत्पाद सूची देख रहे हैं। खरीदारों के सभी प्रश्न आपके इनबॉक्स में दिखाई देंगे।';
 
   @override
-  String get hostContactInfo => 'होस्ट संपर्क जानकारी';
+  String get hostContactInfo => 'मालिक संपर्क जानकारी';
 
   @override
-  String get messageHost => 'होस्ट को संदेश भेजें';
+  String get messageHost => 'मालिक को संदेश भेजें';
 
   @override
-  String get organizerDesc => 'आप इस यात्रा के आयोजक हैं।';
+  String get organizerDesc => 'आप इस सूची के मालिक हैं।';
 
   @override
   String get hostVerifiedDesc =>
@@ -673,6 +736,12 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get cityLabel => 'शहर';
+
+  @override
+  String get districtLabel => 'जिला';
+
+  @override
+  String get villageLabel => 'गाँव';
 
   @override
   String get pleaseSelectACity => 'शहर चुनें';

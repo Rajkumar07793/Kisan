@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kisan_app/core/network/connectivity_bloc.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/gradient_button.dart';
 
 class NoInternetScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class NoInternetScreen extends StatelessWidget {
             size: 100,
             color: context.colorScheme.primary.withOpacity(0.2),
           ),
-          40.heightBox,
+          40.height,
           Text(
             context.l10n.noInternetTitle,
             style: context.textTheme.headlineMedium?.copyWith(
@@ -31,7 +32,7 @@ class NoInternetScreen extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          16.heightBox,
+          16.height,
           Text(
             context.l10n.noInternetDesc,
             style: context.textTheme.bodyLarge?.copyWith(
@@ -39,7 +40,7 @@ class NoInternetScreen extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          60.heightBox,
+          60.height,
           GradientButton(
             text: context.l10n.noInternetButton,
             onPressed: () {

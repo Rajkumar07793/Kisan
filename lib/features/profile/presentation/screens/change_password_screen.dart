@@ -5,6 +5,7 @@ import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/utils/app_overlays.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 import 'package:kisan_app/core/widgets/common/custom_text_field.dart';
 import 'package:kisan_app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -87,7 +88,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  20.heightBox,
+                  20.height,
                   Text(
                     widget.isRecovery
                         ? 'Reset your password'
@@ -97,7 +98,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       color: AppColors.color2D2F2F,
                     ),
                   ),
-                  8.heightBox,
+                  8.height,
                   Text(
                     'Create a strong password to ensure your travel account remains secure.',
                     style: context.textTheme.bodyMedium?.copyWith(
@@ -105,7 +106,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       height: 1.5,
                     ),
                   ),
-                  32.heightBox,
+                  32.height,
 
                   // --- OLD PASSWORD (Only if not recovery) ---
                   if (!widget.isRecovery) ...[
@@ -130,7 +131,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         return null;
                       },
                     ),
-                    24.heightBox,
+                    24.height,
                   ],
 
                   // --- NEW PASSWORD ---
@@ -158,7 +159,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       return null;
                     },
                   ),
-                  24.heightBox,
+                  24.height,
 
                   // --- CONFIRM PASSWORD ---
                   CustomTextField(
@@ -184,7 +185,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       return null;
                     },
                   ),
-                  48.heightBox,
+                  48.height,
 
                   // --- SUBMIT ---
                   CustomGradientButton(
@@ -195,7 +196,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     onTap: _handleUpdate,
                     icon: Icons.check_circle_outline_rounded,
                   ),
-                  30.heightBox,
+                  30.height,
                 ],
               ),
             ),

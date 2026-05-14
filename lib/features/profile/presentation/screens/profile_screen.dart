@@ -6,6 +6,7 @@ import 'package:kisan_app/core/constants/enums/app_enums.dart';
 import 'package:kisan_app/core/constants/sample_html.dart';
 import 'package:kisan_app/core/utils/app_router.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
 import 'package:kisan_app/core/utils/ui_feedback.dart';
 import 'package:kisan_app/core/widgets/common/custom_app_bar.dart';
 import 'package:kisan_app/core/widgets/common/custom_avatar.dart';
@@ -60,13 +61,13 @@ class _AuthenticatedProfileView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          20.heightBox,
+          20.height,
 
           // --- HEADER: AVATAR & INFO ---
           Row(
             children: [
               CustomAvatar(imageUrl: user.profileImage, radius: 45),
-              15.widthBox,
+              15.width,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +80,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
                         fontSize: 22,
                       ),
                     ),
-                    2.heightBox,
+                    2.height,
                     Text(
                       user.email,
                       style: context.textTheme.bodyMedium?.copyWith(
@@ -92,7 +93,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
             ],
           ),
 
-          40.heightBox,
+          40.height,
 
           // --- MENU SECTION ---
           ProfileMenuTile(
@@ -183,7 +184,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
           //   onPressed: () => _showLogoutDialog(context),
           //   icon: Icons.logout_rounded,
           // ),
-          16.heightBox,
+          16.height,
           OutlinedButton(
             onPressed: () => _showDeleteAccountDialog(context),
             style: OutlinedButton.styleFrom(
@@ -205,14 +206,14 @@ class _AuthenticatedProfileView extends StatelessWidget {
             ),
           ),
 
-          // 24.heightBox,
+          // 24.height,
           // Text(
           //   context.l10n.versionText,
           //   style: context.textTheme.bodySmall?.copyWith(
           //     color: Colors.grey[400],
           //   ),
           // ),
-          20.heightBox,
+          20.height,
         ],
       ),
     );
@@ -239,14 +240,14 @@ class _AuthenticatedProfileView extends StatelessWidget {
                 size: 32,
               ),
             ),
-            24.heightBox,
+            24.height,
             Text(
               'Logout?',
               style: context.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            12.heightBox,
+            12.height,
             Text(
               'Are you sure you want to log out? You will need to sign in again to access your travel stories.',
               textAlign: TextAlign.center,
@@ -255,7 +256,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
                 height: 1.5,
               ),
             ),
-            32.heightBox,
+            32.height,
             Row(
               children: [
                 Expanded(
@@ -276,7 +277,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
                     ),
                   ),
                 ),
-                16.widthBox,
+                16.width,
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -298,7 +299,7 @@ class _AuthenticatedProfileView extends StatelessWidget {
                     ),
                   ),
                 ),
-                12.heightBox,
+                12.height,
               ],
             ),
           ],
@@ -376,7 +377,7 @@ class _GuestProfileView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          20.heightBox,
+          20.height,
 
           // --- HEADER: GUEST LOGO ---
           Center(
@@ -395,14 +396,14 @@ class _GuestProfileView extends StatelessWidget {
                     color: AppColors.primary,
                   ),
                 ),
-                16.heightBox,
+                16.height,
                 Text(
                   'Guest Traveler',
                   style: context.textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                4.heightBox,
+                4.height,
                 Text(
                   'Join our safe travel community',
                   style: context.textTheme.bodyMedium?.copyWith(
@@ -413,7 +414,7 @@ class _GuestProfileView extends StatelessWidget {
             ),
           ),
 
-          30.heightBox,
+          30.height,
 
           // --- JOIN BANNER ---
           Container(
@@ -439,7 +440,7 @@ class _GuestProfileView extends StatelessWidget {
                     color: AppColors.primary,
                   ),
                 ),
-                12.heightBox,
+                12.height,
                 Text(
                   'Sign up to book trips, chat with verified hosts, and save your travel preferences.',
                   textAlign: TextAlign.center,
@@ -448,7 +449,7 @@ class _GuestProfileView extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
-                24.heightBox,
+                24.height,
                 GradientButton(
                   text: 'Login / Sign Up',
                   onPressed: () => context.push(AppRouter.login),
@@ -458,7 +459,7 @@ class _GuestProfileView extends StatelessWidget {
             ),
           ),
 
-          30.heightBox,
+          30.height,
 
           // --- MENU SECTION (Limited) ---
           // ProfileMenuTile(
@@ -516,14 +517,14 @@ class _GuestProfileView extends StatelessWidget {
               },
             ),
           ),
-          // 24.heightBox,
+          // 24.height,
           // Text(
           //   context.l10n.versionText,
           //   style: context.textTheme.bodySmall?.copyWith(
           //     color: Colors.grey[400],
           //   ),
           // ),
-          20.heightBox,
+          20.height,
         ],
       ),
     );

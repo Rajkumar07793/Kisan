@@ -175,7 +175,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                       controller: _pinController,
                       onCompleted: (pin) => _onVerify(),
                     ),
-                    35.heightBox,
+                    35.height,
                     BlocConsumer<AuthBloc, AuthState>(
                       listener: (context, state) {
                         if (state.status == AuthStatus.authenticated) {
@@ -206,7 +206,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                         );
                       },
                     ),
-                    35.heightBox,
+                    35.height,
                     Center(
                       child: Text(
                         textAlign: TextAlign.center,
@@ -270,7 +270,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            20.heightBox,
+            20.height,
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -283,7 +283,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 size: 60,
               ),
             ),
-            24.heightBox,
+            24.height,
             const Text(
               'Verification Successful!',
               textAlign: TextAlign.center,
@@ -293,7 +293,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 color: Colors.black87,
               ),
             ),
-            12.heightBox,
+            12.height,
             Text(
               'Your explorer identity has been verified successfully. Your journey with ${EnvConfig.appName} starts now.',
               textAlign: TextAlign.center,
@@ -303,14 +303,14 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 height: 1.5,
               ),
             ),
-            32.heightBox,
+            32.height,
             CustomGradientButton(
               text: 'Start Journey',
               onTap: () {
                 context.go(AppRouter.home);
               },
             ),
-            8.heightBox,
+            8.height,
           ],
         ),
       ),
