@@ -3,6 +3,8 @@ class AppDatabaseConstants {
   static const String usersTable = 'users';
   static const String contentManagementTable = 'content_management';
   static const String contactUsTable = 'contact_us';
+  static const String tractorsTable = 'tractors';
+  static const String bookingsTable = 'bookings';
 
   // Content Management
   static const String columnContentKey = 'content_key';
@@ -37,6 +39,31 @@ class AppDatabaseConstants {
   static const String columnAge = 'age';
   static const String columnUpdatedAt = 'updated_at';
   static const String columnCreatedAt = 'created_at';
+
+  // Tractor Table Column Keys
+  static const String columnOwnerId = 'owner_id';
+  static const String columnTractorModel = 'model';
+  static const String columnHp = 'hp';
+  static const String columnServices = 'services';
+  static const String columnVillage = 'village';
+  static const String columnCity = 'city';
+  static const String columnDistrict = 'district';
+  static const String columnState = 'state';
+  static const String columnRating = 'rating';
+  static const String columnReviews = 'reviews';
+  static const String columnAvailable = 'available';
+  static const String columnPrice = 'price';
+  static const String columnImage = 'image';
+  static const String columnIsVerified = 'is_verified';
+
+  // Booking Table Column Keys
+  static const String columnKisanId = 'kisan_id';
+  static const String columnTractorId = 'tractor_id';
+  static const String columnBookingDate = 'booking_date';
+  static const String columnServiceType = 'service_type';
+  static const String columnBookingStatus = 'booking_status';
+  static const String columnAcreage = 'acreage';
+  static const String columnTotalCost = 'total_cost';
 
   // Storage Buckets
   static const String avatarsBucket = 'avatars';

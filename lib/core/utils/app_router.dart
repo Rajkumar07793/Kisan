@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kisan_app/core/services/injection_container.dart';
 import 'package:kisan_app/features/auth/presentation/screens/forgot_password_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/login_screen.dart';
-import 'package:kisan_app/features/auth/presentation/screens/signup_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/role_select_screen.dart';
+import 'package:kisan_app/features/auth/presentation/screens/signup_screen.dart';
 import 'package:kisan_app/features/auth/presentation/screens/verify_email_screen.dart';
+import 'package:kisan_app/features/chat/presentation/screens/chat_list_screen.dart';
 import 'package:kisan_app/features/chat/presentation/screens/conversation_screen.dart';
 import 'package:kisan_app/features/chat/presentation/screens/groups_conversation_screen.dart';
+import 'package:kisan_app/features/home/presentation/bloc/home_bloc.dart';
+import 'package:kisan_app/features/home/presentation/screens/home_screen.dart';
+import 'package:kisan_app/features/main/presentation/screens/main_screen.dart';
 import 'package:kisan_app/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/change_password_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/contact_us_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/faqs_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/legal_text_screen.dart';
+import 'package:kisan_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/settings_screen.dart';
-import 'package:kisan_app/features/home/presentation/screens/home_screen.dart';
 import 'package:kisan_app/features/search/presentation/screens/search_screen.dart';
 import 'package:kisan_app/features/trips/presentation/screens/user_trips_screen.dart';
-import 'package:kisan_app/features/chat/presentation/screens/chat_list_screen.dart';
-import 'package:kisan_app/features/profile/presentation/screens/profile_screen.dart';
-import 'package:kisan_app/features/main/presentation/screens/main_screen.dart';
 
 class AppRouter {
   static const String root = '/';
@@ -185,7 +188,13 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: home,
-                builder: (context, state) => const HomeScreen(),
+                builder: (context, state) {
+                  final role = state.extra as String? ?? 'kisan';
+                  return BlocProvider(
+                    create: (context) => sl<HomeBloc>(),
+                    child: HomeScreen(role: role),
+                  );
+                },
               ),
             ],
           ),

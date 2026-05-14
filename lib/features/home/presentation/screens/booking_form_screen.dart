@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/utils/extensions/size_extensions.dart';
+import 'package:kisan_app/features/home/domain/entities/tractor_entity.dart';
 import 'package:kisan_app/features/home/presentation/screens/home_screen.dart';
 
 class BookingFormScreen extends StatefulWidget {
-  final TractorModel tractor;
+  final TractorEntity tractor;
   final VoidCallback onBack;
 
   const BookingFormScreen({
@@ -33,7 +34,9 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   @override
   void initState() {
     super.initState();
-    selectedService = widget.tractor.services[0];
+    selectedService = widget.tractor.services.isNotEmpty
+        ? widget.tractor.services[0]
+        : 'all';
   }
 
   @override
@@ -85,7 +88,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
               ),
             ),
             Text(
-              '${widget.tractor.owner} • ${widget.tractor.tractorModel}',
+              '${widget.tractor.ownerName} • ${widget.tractor.model}',
               style: const TextStyle(color: AppColors.gray500, fontSize: 12),
             ),
           ],
@@ -105,7 +108,15 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                 spacing: 8,
                 runSpacing: 8,
                 children: widget.tractor.services.map((sId) {
-                  final svc = SERVICES.firstWhere((e) => e.id == sId);
+                  final svc = services.firstWhere(
+                    (e) => e.id == sId,
+                    orElse: () => ServiceItem(
+                      id: sId,
+                      label: sId,
+                      icon: '🚜',
+                      color: Colors.grey,
+                    ),
+                  );
                   final isSelected = selectedService == sId;
                   return GestureDetector(
                     onTap: () => setState(() => selectedService = sId),

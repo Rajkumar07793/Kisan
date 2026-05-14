@@ -1,13 +1,12 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
+import 'package:kisan_app/features/home/domain/entities/tractor_entity.dart';
 import 'package:kisan_app/features/home/presentation/screens/home_screen.dart';
 
 class TractorDetailScreen extends StatelessWidget {
-  final TractorModel tractor;
+  final TractorEntity tractor;
   final VoidCallback onBack;
-  final Function(TractorModel) onBook;
+  final Function(TractorEntity) onBook;
 
   const TractorDetailScreen({
     super.key,
@@ -20,9 +19,12 @@ class TractorDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.gray50,
-      body: Column(
+      body: Stack(
         children: [
+          // 1. Gradient Header
           Container(
+            // height: 250,
+            width: double.infinity,
             padding: const EdgeInsets.fromLTRB(16, 40, 16, 40),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -56,62 +58,74 @@ class TractorDetailScreen extends StatelessWidget {
                   children: [
                     Text(tractor.image, style: const TextStyle(fontSize: 64)),
                     const SizedBox(width: 16),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          tractor.owner,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        Text(
-                          tractor.tractorModel,
-                          style: const TextStyle(
-                            color: Color(0xFFC8E6C9),
-                            fontSize: 14,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            const Text(
-                              '★★★★★',
-                              style: TextStyle(
-                                color: AppColors.amber,
-                                fontSize: 13,
-                              ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tractor.ownerName,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800,
                             ),
-                            const SizedBox(width: 4),
-                            Text(
-                              tractor.rating.toString(),
-                              style: const TextStyle(
-                                color: Colors.white70,
-                                fontSize: 13,
-                              ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Text(
+                            tractor.model,
+                            style: const TextStyle(
+                              color: Color(0xFFC8E6C9),
+                              fontSize: 14,
                             ),
-                          ],
-                        ),
-                      ],
+                          ),
+                          Row(
+                            children: [
+                              const Text(
+                                '★★★★★',
+                                style: TextStyle(
+                                  color: AppColors.amber,
+                                  fontSize: 13,
+                                ),
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                tractor.rating.toString(),
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          Expanded(
+
+          // 2. Overlapping Content
+          Positioned.fill(
+            top: 200, // Starts overlapping the header
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(top: -36),
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: AppColors.gray200),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
                     ),
                     child: Column(
                       children: [
@@ -136,7 +150,7 @@ class TractorDetailScreen extends StatelessWidget {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                '${tractor.village}, ${tractor.city}, ${tractor.district}, ${tractor.state}, ${tractor.country}',
+                                '${tractor.village}, ${tractor.city}, ${tractor.district}, ${tractor.state}',
                                 style: const TextStyle(
                                   color: AppColors.gray700,
                                   fontSize: 14,
@@ -182,7 +196,15 @@ class TractorDetailScreen extends StatelessWidget {
                           itemCount: tractor.services.length,
                           itemBuilder: (context, index) {
                             final sId = tractor.services[index];
-                            final svc = SERVICES.firstWhere((e) => e.id == sId);
+                            final svc = services.firstWhere(
+                              (e) => e.id == sId,
+                              orElse: () => ServiceItem(
+                                id: sId,
+                                label: sId,
+                                icon: '🚜',
+                                color: Colors.grey,
+                              ),
+                            );
                             return Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
@@ -200,28 +222,13 @@ class TractorDetailScreen extends StatelessWidget {
                                   ),
                                   const SizedBox(width: 8),
                                   Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          svc.label,
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            color: AppColors.gray800,
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                        Text(
-                                          svc.labelEn,
-                                          style: const TextStyle(
-                                            color: AppColors.gray500,
-                                            fontSize: 11,
-                                          ),
-                                        ),
-                                      ],
+                                    child: Text(
+                                      svc.label,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.gray800,
+                                        fontSize: 13,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -243,11 +250,9 @@ class TractorDetailScreen extends StatelessWidget {
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.all(16),
-                        shape: Platform.isAndroid || true
-                            ? RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
-                              )
-                            : null, // Just being simple
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
                         elevation: 0,
                       ),
                       child: Text(
@@ -261,6 +266,7 @@ class TractorDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 32),
                 ],
               ),
             ),

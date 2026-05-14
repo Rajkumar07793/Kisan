@@ -1,186 +1,77 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kisan_app/core/constants/app_colors.dart';
 import 'package:kisan_app/core/utils/extensions/context_extensions.dart';
+import 'package:kisan_app/features/home/domain/entities/tractor_entity.dart';
+import 'package:kisan_app/features/home/presentation/bloc/home_bloc.dart';
+import 'package:kisan_app/features/home/presentation/bloc/home_event.dart';
+import 'package:kisan_app/features/home/presentation/bloc/home_state.dart';
 import 'package:kisan_app/features/home/presentation/screens/booking_form_screen.dart';
 import 'package:kisan_app/features/home/presentation/screens/tractor_detail_screen.dart';
 
-class ServiceModel {
+// Services definition
+class ServiceItem {
   final String id;
   final String label;
-  final String labelEn;
   final String icon;
   final Color color;
 
-  ServiceModel({
+  ServiceItem({
     required this.id,
     required this.label,
-    required this.labelEn,
     required this.icon,
     required this.color,
   });
 }
 
-final List<ServiceModel> SERVICES = [
-  ServiceModel(
+final List<ServiceItem> services = [
+  ServiceItem(
     id: "jutai",
     label: "जुताई",
-    labelEn: "Ploughing",
     icon: "🚜",
     color: const Color(0xFF795548),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "harvesting",
     label: "कटाई",
-    labelEn: "Harvesting",
     icon: "🌾",
     color: const Color(0xFFF57F17),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "ganna",
     label: "गन्ना लोडिंग",
-    labelEn: "Sugarcane Loading",
     icon: "🎋",
     color: const Color(0xFF2E7D32),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "threshing",
     label: "थ्रेशिंग",
-    labelEn: "Threshing",
     icon: "🌽",
     color: const Color(0xFFE65100),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "transport",
     label: "ढुलाई",
-    labelEn: "Transport",
     icon: "🚛",
     color: const Color(0xFF1565C0),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "rotavator",
     label: "रोटावेटर",
-    labelEn: "Rotavator",
     icon: "⚙️",
     color: const Color(0xFF6A1B9A),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "laser_leveling",
     label: "लेज़र लेवलिंग",
-    labelEn: "Laser Leveling",
     icon: "📐",
     color: const Color(0xFF00695C),
   ),
-  ServiceModel(
+  ServiceItem(
     id: "sowing",
     label: "बुआई",
-    labelEn: "Sowing",
     icon: "🌱",
     color: const Color(0xFF558B2F),
-  ),
-];
-
-class TractorModel {
-  final int id;
-  final String owner;
-  final String ownerEn;
-  final String phone;
-  final String tractorModel;
-  final String hp;
-  final List<String> services;
-  final String village;
-  final String city;
-  final String district;
-  final String state;
-  final String country;
-  final double rating;
-  final int reviews;
-  final bool available;
-  final String price;
-  final String image;
-  final bool verified;
-
-  TractorModel({
-    required this.id,
-    required this.owner,
-    required this.ownerEn,
-    required this.phone,
-    required this.tractorModel,
-    required this.hp,
-    required this.services,
-    required this.village,
-    required this.city,
-    required this.district,
-    required this.state,
-    required this.country,
-    required this.rating,
-    required this.reviews,
-    required this.available,
-    required this.price,
-    required this.image,
-    required this.verified,
-  });
-}
-
-final List<TractorModel> DEMO_TRACTORS = [
-  TractorModel(
-    id: 1,
-    owner: "रामलाल यादव",
-    ownerEn: "Ramlal Yadav",
-    phone: "9876543210",
-    tractorModel: "Mahindra 575 DI",
-    hp: "47 HP",
-    services: ["jutai", "harvesting", "rotavator"],
-    village: "सेमरिया",
-    city: "जबलपुर",
-    district: "जबलपुर",
-    state: "मध्य प्रदेश",
-    country: "भारत",
-    rating: 4.8,
-    reviews: 34,
-    available: true,
-    price: "800/घंटा",
-    image: "🚜",
-    verified: true,
-  ),
-  TractorModel(
-    id: 2,
-    owner: "सुरेश पटेल",
-    ownerEn: "Suresh Patel",
-    phone: "9812345678",
-    tractorModel: "John Deere 5050 D",
-    hp: "50 HP",
-    services: ["ganna", "transport", "harvesting"],
-    village: "पाटन",
-    city: "जबलपुर",
-    district: "जबलपुर",
-    state: "मध्य प्रदेश",
-    country: "भारत",
-    rating: 4.5,
-    reviews: 21,
-    available: true,
-    price: "1000/घंटा",
-    image: "🚜",
-    verified: true,
-  ),
-  TractorModel(
-    id: 3,
-    owner: "मोहन सिंह",
-    ownerEn: "Mohan Singh",
-    phone: "9834567890",
-    tractorModel: "Swaraj 855 FE",
-    hp: "55 HP",
-    services: ["jutai", "sowing", "threshing", "laser_leveling"],
-    village: "बरेला",
-    city: "नरसिंहपुर",
-    district: "नरसिंहपुर",
-    state: "मध्य प्रदेश",
-    country: "भारत",
-    rating: 4.2,
-    reviews: 15,
-    available: false,
-    price: "900/घंटा",
-    image: "🚜",
-    verified: false,
   ),
 ];
 
@@ -194,10 +85,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String filterService = 'all';
-  TractorModel? selectedTractor;
-  TractorModel? bookingTractor;
+  TractorEntity? selectedTractor;
+  TractorEntity? bookingTractor;
   bool showDetail = false;
   bool showBooking = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  void _fetchData() {
+    if (widget.role == 'owner') {
+      context.read<HomeBloc>().add(HomeMyTractorsFetched());
+    } else {
+      context.read<HomeBloc>().add(
+        HomeTractorsFetched(serviceType: filterService),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -227,167 +134,176 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildKisanHome() {
-    final filtered = filterService == 'all'
-        ? DEMO_TRACTORS
-        : DEMO_TRACTORS
-              .where((t) => t.services.contains(filterService))
-              .toList();
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        final filtered = state.tractors;
 
-    return Scaffold(
-      backgroundColor: AppColors.gray50,
-      body: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(16, 40, 16, 28),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [AppColors.primaryDark, AppColors.primary],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${context.l10n.welcomeBack} 🙏',
-                  style: const TextStyle(
-                    color: Color(0xFFA5D6A7),
-                    fontSize: 13,
+        return Scaffold(
+          backgroundColor: AppColors.gray50,
+          body: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(16, 40, 16, 28),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [AppColors.primaryDark, AppColors.primary],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
                 ),
-                Text(
-                  context.l10n.appTitle,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Text(
-                  context.l10n.nearbyTractors,
-                  style: const TextStyle(
-                    color: Color(0xFFC8E6C9),
-                    fontSize: 13,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.search,
-                        color: AppColors.gray400,
-                        size: 18,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        context.l10n.searchPlaceholderHome,
-                        style: TextStyle(
-                          color: AppColors.gray400,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(16, 16, 16, 10),
-                    child: Text(
-                      context.l10n.chooseServices,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        color: AppColors.gray800,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${context.l10n.welcomeBack} 🙏',
+                      style: const TextStyle(
+                        color: Color(0xFFA5D6A7),
+                        fontSize: 13,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      children: [
-                        _buildFilterChip('all', context.l10n.viewAll),
-                        ...SERVICES.map(
-                          (s) => _buildFilterChip(
-                            s.id,
-                            s.label,
-                            icon: s.icon,
-                            color: s.color,
+                    Text(
+                      context.l10n.appTitle,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    Text(
+                      context.l10n.nearbyTractors,
+                      style: const TextStyle(
+                        color: Color(0xFFC8E6C9),
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.search,
+                            color: AppColors.gray400,
+                            size: 18,
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 8),
+                          Text(
+                            context.l10n.searchPlaceholderHome,
+                            style: const TextStyle(
+                              color: AppColors.gray400,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '${context.l10n.nearbyTractors} (${filtered.length})',
+                  ],
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 16, 16, 10),
+                        child: Text(
+                          context.l10n.chooseServices,
                           style: const TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 16,
                             color: AppColors.gray800,
                           ),
                         ),
-                        const SizedBox(height: 12),
-                        if (filtered.isEmpty)
-                          Center(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 40),
-                              child: Column(
-                                children: [
-                                  Text('😔', style: TextStyle(fontSize: 48)),
-                                  Text(
-                                    context.l10n.noResultsFound,
-                                    style: TextStyle(color: AppColors.gray400),
-                                  ),
-                                ],
+                      ),
+                      SizedBox(
+                        height: 50,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          children: [
+                            _buildFilterChip('all', context.l10n.viewAll),
+                            ...services.map(
+                              (s) => _buildFilterChip(
+                                s.id,
+                                s.label,
+                                icon: s.icon,
+                                color: s.color,
                               ),
                             ),
-                          )
-                        else
-                          ...filtered.map(
-                            (t) => _TractorCard(
-                              tractor: t,
-                              onView: () => setState(() {
-                                selectedTractor = t;
-                                showDetail = true;
-                              }),
-                              onBook: () => setState(() {
-                                bookingTractor = t;
-                                showBooking = true;
-                              }),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${context.l10n.nearbyTractors} (${filtered.length})',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                                color: AppColors.gray800,
+                              ),
                             ),
-                          ),
-                      ],
-                    ),
+                            const SizedBox(height: 12),
+                            if (state.status == HomeStatus.loading)
+                              const Center(child: CircularProgressIndicator())
+                            else if (filtered.isEmpty)
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 40,
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      const Text(
+                                        '😔',
+                                        style: TextStyle(fontSize: 48),
+                                      ),
+                                      Text(
+                                        context.l10n.noResultsFound,
+                                        style: const TextStyle(
+                                          color: AppColors.gray400,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            else
+                              ...filtered.map(
+                                (t) => _TractorCard(
+                                  tractor: t,
+                                  onView: () => setState(() {
+                                    selectedTractor = t;
+                                    showDetail = true;
+                                  }),
+                                  onBook: () => setState(() {
+                                    bookingTractor = t;
+                                    showBooking = true;
+                                  }),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -401,7 +317,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final themeColor = color ?? AppColors.primary;
 
     return GestureDetector(
-      onTap: () => setState(() => filterService = id),
+      onTap: () {
+        setState(() => filterService = id);
+        context.read<HomeBloc>().add(HomeTractorsFetched(serviceType: id));
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -431,117 +350,127 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildOwnerHome() {
-    return Scaffold(
-      backgroundColor: AppColors.gray50,
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.fromLTRB(16, 40, 16, 24),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [AppColors.primaryDark, AppColors.primary],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${context.l10n.welcomeBack} 🙏',
-                  style: TextStyle(color: Color(0xFFA5D6A7), fontSize: 13),
-                ),
-                Text(
-                  context.l10n.tractorDashboard,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w800,
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: AppColors.gray50,
+          body: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(16, 40, 16, 24),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [AppColors.primaryDark, AppColors.primary],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
                 ),
-                Text(
-                  context.l10n.manageYourTractors,
-                  style: TextStyle(color: Color(0xFFC8E6C9), fontSize: 13),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: _buildStatCard(
-                        'नई बुकिंग',
-                        '1',
-                        AppColors.amber,
-                        AppColors.amberLight,
-                        '🔔',
+                    Text(
+                      '${context.l10n.welcomeBack} 🙏',
+                      style: const TextStyle(
+                        color: Color(0xFFA5D6A7),
+                        fontSize: 13,
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: _buildStatCard(
-                        'सक्रिय',
-                        '1',
-                        AppColors.primary,
-                        AppColors.greenPale,
-                        '✅',
+                    Text(
+                      context.l10n.tractorDashboard,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: _buildStatCard(
-                        'पूर्ण',
-                        '1',
-                        AppColors.blue,
-                        AppColors.blueLight,
-                        '🏆',
+                    Text(
+                      context.l10n.manageYourTractors,
+                      style: const TextStyle(
+                        color: Color(0xFFC8E6C9),
+                        fontSize: 13,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.gray200),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        context.l10n.quickActions,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _buildStatCard(
+                            'नई बुकिंग',
+                            '1',
+                            AppColors.amber,
+                            AppColors.amberLight,
+                            '🔔',
+                          ),
                         ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: _buildStatCard(
+                            'सक्रिय',
+                            '1',
+                            AppColors.primary,
+                            AppColors.greenPale,
+                            '✅',
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: _buildStatCard(
+                            'पूर्ण',
+                            '1',
+                            AppColors.blue,
+                            AppColors.blueLight,
+                            '🏆',
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: AppColors.gray200),
                       ),
-                      const SizedBox(height: 12),
-                      _buildQuickAction(
-                        '🚜',
-                        context.l10n.addTractor,
-                        context.l10n.registerNewTractor,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context.l10n.quickActions,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 15,
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          _buildQuickAction(
+                            '🚜',
+                            context.l10n.addTractor,
+                            context.l10n.registerNewTractor,
+                          ),
+                          const Divider(height: 1, color: AppColors.gray100),
+                          _buildQuickAction(
+                            '📋',
+                            context.l10n.viewBookings,
+                            '1 ${context.l10n.newBookingsPending}',
+                          ),
+                        ],
                       ),
-                      const Divider(height: 1, color: AppColors.gray100),
-                      _buildQuickAction(
-                        '📋',
-                        context.l10n.viewBookings,
-                        '1 ${context.l10n.newBookingsPending}',
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -622,7 +551,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class _TractorCard extends StatelessWidget {
-  final TractorModel tractor;
+  final TractorEntity tractor;
   final VoidCallback onView;
   final VoidCallback onBook;
   const _TractorCard({
@@ -663,14 +592,14 @@ class _TractorCard extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            tractor.owner,
+                            tractor.ownerName,
                             style: const TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
                               color: AppColors.gray900,
                             ),
                           ),
-                          if (tractor.verified) ...[
+                          if (tractor.isVerified) ...[
                             const SizedBox(width: 6),
                             Container(
                               padding: const EdgeInsets.symmetric(
@@ -693,7 +622,7 @@ class _TractorCard extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        '${tractor.tractorModel} • ${tractor.hp}',
+                        '${tractor.model} • ${tractor.hp}',
                         style: const TextStyle(
                           color: AppColors.gray600,
                           fontSize: 13,
@@ -788,8 +717,14 @@ class _TractorCard extends StatelessWidget {
                   spacing: 6,
                   runSpacing: 6,
                   children: tractor.services.map((s) {
-                    final svc = SERVICES.firstWhere(
+                    final svc = services.firstWhere(
                       (element) => element.id == s,
+                      orElse: () => ServiceItem(
+                        id: s,
+                        label: s,
+                        icon: '🚜',
+                        color: Colors.grey,
+                      ),
                     );
                     return Container(
                       padding: const EdgeInsets.symmetric(
@@ -811,7 +746,7 @@ class _TractorCard extends StatelessWidget {
                     );
                   }).toList(),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 14),
                 Row(
                   children: [
                     Expanded(

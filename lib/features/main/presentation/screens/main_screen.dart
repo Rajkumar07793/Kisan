@@ -25,7 +25,11 @@ class MainScreen extends StatelessWidget {
               icon: '🚜',
               label: context.l10n.navMyTractors,
             ),
-            _TabItem(id: 'bookings', icon: '📋', label: context.l10n.navBookings),
+            _TabItem(
+              id: 'bookings',
+              icon: '📋',
+              label: context.l10n.navBookings,
+            ),
             _TabItem(id: 'profile', icon: '👤', label: context.l10n.navProfile),
           ]
         : [
@@ -72,8 +76,12 @@ class MainScreen extends StatelessWidget {
                         tab.label,
                         style: TextStyle(
                           fontSize: 10,
-                          color: isSelected ? AppColors.primary : AppColors.gray500,
-                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
+                          color: isSelected
+                              ? AppColors.primary
+                              : AppColors.gray500,
+                          fontWeight: isSelected
+                              ? FontWeight.w700
+                              : FontWeight.w400,
                         ),
                       ),
                       const Spacer(),
@@ -108,11 +116,12 @@ class _ProfileScreen extends StatelessWidget {
     final isOwner = role == 'owner';
     return Scaffold(
       backgroundColor: AppColors.gray50,
-      body: Column(
+      body: Stack(
         children: [
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.fromLTRB(16, 60, 16, 48),
+            // height: 260,
+            padding: const EdgeInsets.fromLTRB(16, 50, 16, 40),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [AppColors.primaryDark, AppColors.primary],
@@ -128,54 +137,102 @@ class _ProfileScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white.withOpacity(0.2),
-                    border: Border.all(color: Colors.white.withOpacity(0.5), width: 3),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.5),
+                      width: 3,
+                    ),
                   ),
                   child: Center(
-                    child: Text(isOwner ? '🚜' : '👨‍🌾', style: const TextStyle(fontSize: 40)),
+                    child: Text(
+                      isOwner ? '🚜' : '👨‍🌾',
+                      style: const TextStyle(fontSize: 40),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
-                Text(isOwner ? 'रामलाल यादव' : 'अजय कुमार', style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w800)),
-                Text('${isOwner ? context.l10n.host : "किसान"} • जबलपुर, म.प्र.', style: const TextStyle(color: Color(0xFFC8E6C9), fontSize: 13)),
+                Text(
+                  isOwner ? 'रामलाल यादव' : 'अजय कुमार',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                Text(
+                  '${isOwner ? context.l10n.host : "किसान"} • जबलपुर, म.प्र.',
+                  style: const TextStyle(
+                    color: Color(0xFFC8E6C9),
+                    fontSize: 13,
+                  ),
+                ),
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.fromLTRB(16, -20, 16, 0),
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: AppColors.gray200),
-            ),
-            child: Column(
-              children: [
-                _buildProfileItem('📞', context.l10n.mobileNumber, '9876543210'),
-                _buildProfileItem('🏘️', context.l10n.villageLabel, 'सेमरिया'),
-                _buildProfileItem('🏙️', context.l10n.districtLabel, 'जबलपुर'),
-                _buildProfileItem('🗺️', context.l10n.stateLabel, 'मध्य प्रदेश', isLast: true),
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                _ProfileButton(
-                  onTap: onSwitch,
-                  label: isOwner ? 'किसान मोड में जाएं' : 'ट्रैक्टर मालिक बनें',
-                  icon: '🔄',
-                  isOutline: true,
-                ),
-                const SizedBox(height: 10),
-                _ProfileButton(
-                  onTap: onSwitch,
-                  label: context.l10n.logout,
-                  icon: '🚪',
-                  isRed: true,
-                ),
-              ],
+          Positioned.fill(
+            top: 210,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: AppColors.gray200),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        _buildProfileItem(
+                          '📞',
+                          context.l10n.mobileNumber,
+                          '9876543210',
+                        ),
+                        _buildProfileItem(
+                          '🏘️',
+                          context.l10n.villageLabel,
+                          'सेमरिया',
+                        ),
+                        _buildProfileItem(
+                          '🏙️',
+                          context.l10n.districtLabel,
+                          'जबलपुर',
+                        ),
+                        _buildProfileItem(
+                          '🗺️',
+                          context.l10n.stateLabel,
+                          'मध्य प्रदेश',
+                          isLast: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  _ProfileButton(
+                    onTap: onSwitch,
+                    label: isOwner
+                        ? 'किसान मोड में जाएं'
+                        : 'ट्रैक्टर मालिक बनें',
+                    icon: '🔄',
+                    isOutline: true,
+                  ),
+                  const SizedBox(height: 10),
+                  _ProfileButton(
+                    onTap: onSwitch,
+                    label: context.l10n.logout,
+                    icon: '🚪',
+                    isRed: true,
+                  ),
+                  const SizedBox(height: 32),
+                ],
+              ),
             ),
           ),
         ],
@@ -183,11 +240,18 @@ class _ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileItem(String icon, String label, String val, {bool isLast = false}) {
+  Widget _buildProfileItem(
+    String icon,
+    String label,
+    String val, {
+    bool isLast = false,
+  }) {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        border: isLast ? null : const Border(bottom: BorderSide(color: AppColors.gray100)),
+        border: isLast
+            ? null
+            : const Border(bottom: BorderSide(color: AppColors.gray100)),
       ),
       child: Row(
         children: [
@@ -196,8 +260,18 @@ class _ProfileScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(label, style: const TextStyle(color: AppColors.gray500, fontSize: 12)),
-              Text(val, style: const TextStyle(color: AppColors.gray800, fontWeight: FontWeight.w600, fontSize: 14)),
+              Text(
+                label,
+                style: const TextStyle(color: AppColors.gray500, fontSize: 12),
+              ),
+              Text(
+                val,
+                style: const TextStyle(
+                  color: AppColors.gray800,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                ),
+              ),
             ],
           ),
         ],
@@ -236,11 +310,15 @@ class _ProfileButton extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: isRed ? AppColors.redLight : (isOutline ? Colors.white : AppColors.primary),
+          color: isRed
+              ? AppColors.redLight
+              : (isOutline ? Colors.white : AppColors.primary),
           borderRadius: BorderRadius.circular(14),
-          border: isRed 
+          border: isRed
               ? Border.all(color: AppColors.red, width: 1.5)
-              : (isOutline ? Border.all(color: AppColors.primary, width: 1.5) : null),
+              : (isOutline
+                    ? Border.all(color: AppColors.primary, width: 1.5)
+                    : null),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -250,7 +328,9 @@ class _ProfileButton extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: isRed ? AppColors.red : (isOutline ? AppColors.primary : Colors.white),
+                color: isRed
+                    ? AppColors.red
+                    : (isOutline ? AppColors.primary : Colors.white),
                 fontWeight: FontWeight.w700,
                 fontSize: 15,
               ),
