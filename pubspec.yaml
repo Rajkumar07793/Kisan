@@ -58,6 +58,7 @@ dependencies:
   dartz: ^0.10.1
   pinput: ^6.0.2
   flutter_widget_from_html: ^0.17.2
+  firebase_core: ^4.9.0
 
 dev_dependencies:
   flutter_test:

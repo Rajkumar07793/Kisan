@@ -12,6 +12,12 @@ import 'package:kisan_app/features/profile/presentation/screens/contact_us_scree
 import 'package:kisan_app/features/profile/presentation/screens/faqs_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/legal_text_screen.dart';
 import 'package:kisan_app/features/profile/presentation/screens/settings_screen.dart';
+import 'package:kisan_app/features/home/presentation/screens/home_screen.dart';
+import 'package:kisan_app/features/search/presentation/screens/search_screen.dart';
+import 'package:kisan_app/features/trips/presentation/screens/user_trips_screen.dart';
+import 'package:kisan_app/features/chat/presentation/screens/chat_list_screen.dart';
+import 'package:kisan_app/features/profile/presentation/screens/profile_screen.dart';
+import 'package:kisan_app/features/main/presentation/screens/main_screen.dart';
 
 class AppRouter {
   static const String root = '/';
@@ -152,40 +158,39 @@ class AppRouter {
         },
       ),
 
-      /*
       /// --- PERSISTENT BOTTOM NAV SHELL ---
       StatefulShellRoute.indexedStack(
-        // builder: (context, state, navigationShell) {
-        //   return MainScreen(navigationShell: navigationShell);
-        // },
+        builder: (context, state, navigationShell) {
+          return MainScreen(navigationShell: navigationShell);
+        },
         branches: [
           // Branch 0: Home
-          // StatefulShellBranch(
-          //   routes: [
-          //     GoRoute(
-          //       path: home,
-          //       builder: (context, state) => const HomeScreen(),
-          //     ),
-          //   ],
-          // ),
-          // // Branch 1: Search
-          // StatefulShellBranch(
-          //   routes: [
-          //     GoRoute(
-          //       path: search,
-          //       builder: (context, state) => const SearchScreen(),
-          //     ),
-          //   ],
-          // ),
-          // // Branch 2: My Trip
-          // StatefulShellBranch(
-          //   routes: [
-          //     GoRoute(
-          //       path: trips,
-          //       builder: (context, state) => const UserTripsScreen(),
-          //     ),
-          //   ],
-          // ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: home,
+                builder: (context, state) => const HomeScreen(),
+              ),
+            ],
+          ),
+          // Branch 1: Search
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: search,
+                builder: (context, state) => const SearchScreen(),
+              ),
+            ],
+          ),
+          // Branch 2: My Trip
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: trips,
+                builder: (context, state) => const UserTripsScreen(),
+              ),
+            ],
+          ),
           // Branch 3: Chat
           StatefulShellBranch(
             routes: [
@@ -206,7 +211,6 @@ class AppRouter {
           ),
         ],
       ),
-      */
     ],
   );
 }
